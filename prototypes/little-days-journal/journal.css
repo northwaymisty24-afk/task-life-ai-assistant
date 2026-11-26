@@ -70,7 +70,7 @@ body.journal-on .sidebar {
 .corner-tape i:last-child {
   --corner-color: #cf8d76; width: 53px; right: 4px; top: 9px; transform: rotate(-28deg);
 }
-.corner-tape-top { top: -8px; right: 8px; }
+.corner-tape-top { top: 12px; right: -15px; }
 .corner-tape-bottom { bottom: -3px; right: 4px; }
 .journal-on .journal-feelings h2 { padding-right: 80px; }
 .journal-on .journal-self-time > h2 { padding-right: 70px; }
@@ -113,7 +113,7 @@ body.journal-on .sidebar {
 .journal-support p { white-space: normal; overflow-wrap: anywhere; }
 .journal-marker {
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
-  padding: 0 4px 2px; background: var(--journal-marker) left 80% / 100% 1.15em no-repeat;
+  padding: 0 5px 3px; background: var(--journal-marker) left 65% / 100% 1.75em no-repeat;
 }
 .journal-plan .section-head { flex-wrap: wrap; gap: 4px 16px; }
 .journal-plan .section-head > .plan-toggle { justify-content: flex-start; }
@@ -151,24 +151,34 @@ body.journal-on .sidebar {
 @media (prefers-reduced-motion: reduce) { .journal-on .wk-row { transition: none; } }
 
 
-body.journal-chat-on {
-  background: linear-gradient(#fffdf26b,#fffdf26b), #e9dfb9 var(--journal-chat-sand) center top / 600px auto repeat;
+body.journal-chat-on { background: var(--paper) var(--grain); }
+.journal-chat-on main { position: relative; isolation: isolate; background: var(--paper) var(--grain); }
+.journal-chat-on main::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  inset: 0 0 auto; height: 275px;
+  background: radial-gradient(ellipse at 82% 3%, #eadcae8c, #f7f1df5c 46%, #faf7f200 78%);
 }
-.journal-chat-on .sidebar {
-  background: linear-gradient(#fffdf4a8,#fffdf4a8), var(--journal-chat-sand) center top / 600px auto;
+.journal-chat-on .pagehead { position: relative; min-height: 185px; align-items: flex-start; }
+.journal-chat-on .pagehead > div:first-child { position: relative; z-index: 1; max-width: 55%; }
+.journal-chat-on .pagehead::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  inset: -38px -35px -24px -35px;
+  background: var(--journal-chat-sand) center / 700px auto repeat;
+  mix-blend-mode: multiply; opacity: .25;
+  -webkit-mask-image: radial-gradient(ellipse at 62% 26%, #000 12%, #0007 45%, transparent 73%);
+  mask-image: radial-gradient(ellipse at 62% 26%, #000 12%, #0007 45%, transparent 73%);
 }
-.journal-chat-on .pagehead { position: relative; isolation: isolate; min-height: 145px; }
-.journal-chat-on .pagehead > div:first-child { max-width: 59%; }
 .journal-chat-art {
-  position: absolute; z-index: -1; right: -12px; top: -18px; width: min(44%,340px); height: 165px;
+  position: absolute; z-index: 0; right: -5px; top: -28px; width: min(69%,650px); height: 235px;
   background: var(--journal-chat-joy) center / contain no-repeat;
-  mix-blend-mode: multiply; opacity: .82; pointer-events: none;
-  -webkit-mask-image: linear-gradient(transparent,black 8%,black 88%,transparent);
-  mask-image: linear-gradient(transparent,black 8%,black 88%,transparent);
+  filter: grayscale(1) brightness(1.08) contrast(1.35);
+  mix-blend-mode: multiply; opacity: .85; pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 70% 67% at 50% 42%, #000 51%, transparent 79%);
+  mask-image: radial-gradient(ellipse 70% 67% at 50% 42%, #000 51%, transparent 79%);
 }
 .journal-chat-on .conversation {
-  background: linear-gradient(#fffdf266,#fffdf266), var(--journal-chat-sand) center / 600px auto repeat;
-  border-color: #c6ba96;
+  background: var(--white) var(--grain);
+  border-color: var(--line);
 }
 .journal-chat-on .bubble {
   background: #fffcf3; border: 1px solid #bdb5a1;
@@ -179,7 +189,9 @@ body.journal-chat-on {
 .journal-chat-on .chat-hello p { background: #fffcf3; border-color: #c7bfa9; }
 .journal-chat-on .composer textarea { background: #fffcf3; border-color: #bdb5a1; }
 @media (max-width: 580px) {
-  .journal-chat-on .pagehead { min-height: 123px; }
-  .journal-chat-on .pagehead > div:first-child { max-width: 59%; }
-  .journal-chat-art { right: -5px; top: -6px; width: 42%; height: 102px; }
+  .journal-chat-on .pagehead { min-height: 196px; }
+  .journal-chat-on .pagehead > div:first-child { max-width: 100%; }
+  .journal-chat-on .pagehead::before { inset: -22px -16px -16px; }
+  .journal-chat-on main::before { height: 260px; }
+  .journal-chat-art { right: -8px; left: -8px; top: 63px; width: auto; height: 148px; }
 }
