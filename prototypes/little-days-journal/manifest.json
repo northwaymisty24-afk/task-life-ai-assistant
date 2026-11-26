@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "style": "C 底色 / C 胶带 / B 纸质圆章",
+  "rotation": "one collage + one doodle per browser-local Monday-based week",
+  "assets": [
+    {
+      "id": "tea-pause",
+      "label": "慢慢喝杯茶",
+      "kind": "collage",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/collages/tea-pause.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "sprout-notes",
+      "label": "小小的新芽",
+      "kind": "collage",
+      "contexts": [
+        "learning",
+        "neutral"
+      ],
+      "path": "assets/collages/sprout-notes.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "sunny-window",
+      "label": "窗边的阳光",
+      "kind": "collage",
+      "contexts": [
+        "outdoors",
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/collages/sunny-window.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "garden-pause",
+      "label": "树下坐一会",
+      "kind": "collage",
+      "contexts": [
+        "outdoors",
+        "learning",
+        "neutral"
+      ],
+      "path": "assets/collages/garden-pause.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "sun-friend",
+      "label": "伸手接一点阳光",
+      "kind": "doodle",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/sun-friend.svg",
+      "enabled": true,
+      "origin": "original-svg",
+      "version": 1
+    },
+    {
+      "id": "little-reader",
+      "label": "慢慢读",
+      "kind": "doodle",
+      "contexts": [
+        "learning",
+        "neutral"
+      ],
+      "path": "assets/doodles/little-reader.svg",
+      "enabled": true,
+      "origin": "original-svg",
+      "version": 1
+    },
+    {
+      "id": "tea-friend",
+      "label": "茶歇小人",
+      "kind": "doodle",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/tea-friend.svg",
+      "enabled": true,
+      "origin": "original-svg",
+      "version": 1
+    },
+    {
+      "id": "gentle-stretch",
+      "label": "伸个懒腰",
+      "kind": "doodle",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/gentle-stretch.svg",
+      "enabled": true,
+      "origin": "original-svg",
+      "version": 1
+    },
+    {
+      "id": "little-walker",
+      "label": "出去走走",
+      "kind": "doodle",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/little-walker.svg",
+      "enabled": true,
+      "origin": "original-svg",
+      "version": 1
+    },
+    {
+      "id": "resting-head",
+      "label": "趴一会儿",
+      "kind": "doodle",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/resting-head.svg",
+      "enabled": true,
+      "origin": "original-svg",
+      "version": 1
+    },
+    {
+      "id": "small-bloom",
+      "label": "一朵小花",
+      "kind": "doodle",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/small-bloom.svg",
+      "enabled": true,
+      "origin": "original-svg",
+      "version": 1
+    },
+    {
+      "id": "bird-branch",
+      "label": "枝头小鸟",
+      "kind": "doodle",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/bird-branch.svg",
+      "enabled": true,
+      "origin": "original-svg",
+      "version": 1
+    },
+    {
+      "id": "moon-cloud",
+      "label": "月亮和云",
+      "kind": "doodle",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/moon-cloud.svg",
+      "enabled": true,
+      "origin": "original-svg",
+      "version": 1
+    },
+    {
+      "id": "book-spark",
+      "label": "书里的一点光",
+      "kind": "doodle",
+      "contexts": [
+        "learning",
+        "neutral"
+      ],
+      "path": "assets/doodles/book-spark.svg",
+      "enabled": true,
+      "origin": "original-svg",
+      "version": 1
+    }
+  ]
+}

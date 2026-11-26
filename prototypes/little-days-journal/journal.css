@@ -1,0 +1,34 @@
+/* C: quiet plaster + C gingham tape. Reading areas remain calm. */
+:root{--journal-cream:#f6f0e6;--journal-card:#fffdf8ed;--journal-line:#dcd5c7;--journal-tape-shadow:#70674e12;--journal-green:#6a7c61}
+body.journal-on{background:var(--journal-cream) var(--journal-plaster) repeat;background-size:1200px 900px}
+.journal-on .surface{background:var(--journal-card);border-color:var(--journal-line);box-shadow:0 3px 13px var(--journal-tape-shadow)}
+.journal-on .recap-card{background:var(--paper-note)}
+.journal-on .tape-title{position:relative;z-index:0;display:inline-block;max-width:100%;margin-block:2px 9px;font-family:var(--display);line-height:1.55;isolation:isolate}
+.journal-on .tape-title::before{content:"";position:absolute;inset:-3px -8px -2px;z-index:-1;background:var(--journal-tape-sage) repeat;background-size:72px 36px;transform:rotate(-.7deg);clip-path:polygon(1% 0,98% 3%,97% 14%,100% 21%,98% 32%,99% 45%,97.5% 58%,99% 70%,97% 85%,99% 98%,2% 100%,3% 85%,0 71%,2% 56%,.5% 44%,3% 30%,1% 15%);opacity:.88}
+.journal-on .tape-coral::before{background-image:var(--journal-tape-coral);transform:rotate(.5deg)}
+.journal-on .tape-blue::before{background-image:var(--journal-tape-blue);transform:rotate(-.3deg)}
+.journal-on .wk-grid{position:relative;isolation:isolate;padding-block:5px}
+.journal-on .wk-grid::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--journal-week-waves) center/100% 100% no-repeat;pointer-events:none}
+.journal-on .wk-row{border-radius:11px;transition:background .15s}
+.journal-on .wk-row.on{background:#e5ecdfc9;border-color:#a1b395;box-shadow:none}
+.journal-on .wk-end{gap:2px}
+.journal-on .wk-end .badge{width:28px;height:30px;flex:none}
+.journal-on .badge img{display:block;width:28px;height:28px;object-fit:contain}
+.journal-vignette{display:flex;align-items:flex-end;justify-content:center;gap:12px;padding:20px 9px 7px;margin-top:7px;min-width:0;pointer-events:none}
+.journal-vignette .journal-collage{width:min(67%,172px);height:auto;max-height:180px;object-fit:contain}
+.journal-vignette .journal-doodle{width:65px;height:88px;object-fit:contain;flex:none;opacity:.94;transform:rotate(2deg)}
+.journal-vignette[data-place=week]{justify-content:flex-end;max-width:320px;margin:5px 0 0 auto;padding-top:8px}
+.journal-vignette[data-place=week] .journal-collage{width:120px;max-height:130px}
+.journal-vignette[data-place=week] .journal-doodle{width:55px;height:72px}
+.journal-support{display:flex;align-items:flex-start;gap:10px;margin-top:18px;padding:13px 14px;background:#e9eedf91;border-radius:13px;line-height:1.8;font-size:14px}
+.journal-support::before{content:"";width:18px;height:18px;flex:none;margin-top:5px;background:var(--journal-sun) center/contain no-repeat}
+.journal-support p{white-space:normal;overflow-wrap:anywhere}
+.journal-on .ins{background:var(--journal-card)}
+@media(max-width:580px){
+  .journal-vignette{justify-content:center;padding-top:15px;margin-top:0;gap:20px}
+  .journal-vignette .journal-collage{width:130px;max-height:130px}.journal-vignette .journal-doodle{width:58px;height:78px}
+  .journal-on .wk-end .badge{width:21px;height:24px}.journal-on .badge img{width:21px;height:21px}
+  .journal-on .wk-end{gap:0}.journal-on .wk-n{font-size:11px;min-width:23px}
+  .journal-support{padding:11px;font-size:14px}.journal-on .tape-title::before{inset:-2px -5px -1px}
+}
+@media(prefers-reduced-motion:reduce){.journal-on .wk-row{transition:none}}
