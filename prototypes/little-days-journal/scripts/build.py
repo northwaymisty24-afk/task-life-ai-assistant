@@ -43,6 +43,8 @@ textures = {
     'week-waves': 'week-waves.svg',
     'marker': 'marker.svg',
     'chat-xuan': 'chat-xuan.webp',
+    'chat-sand': 'chat-sand.webp',
+    'chat-joy': 'chat-joy.webp',
 }
 variables = ':root{' + ''.join(
     f'--journal-{name}:url("{data(ROOT / "assets/textures" / file)}");' for name, file in textures.items()

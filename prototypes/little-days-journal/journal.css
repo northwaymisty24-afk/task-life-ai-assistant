@@ -59,7 +59,7 @@ body.journal-on .sidebar {
 }
 .tape-title::before { inset: -1px -9px -1px; transform: rotate(-1.3deg); }
 .tape-title.tape-second::before { transform: rotate(.8deg); }
-.corner-tape { position: absolute; display: block; width: 92px; height: 36px; pointer-events: none; transform: rotate(180deg); }
+.corner-tape { position: absolute; display: block; width: 92px; height: 36px; pointer-events: none; transform: rotate(65deg); }
 .corner-tape i {
   display: block; height: 15px; background: var(--corner-grid), var(--corner-color);
   background-blend-mode: normal, normal, multiply, normal; opacity: .91;
@@ -70,10 +70,10 @@ body.journal-on .sidebar {
 .corner-tape i:last-child {
   --corner-color: #cf8d76; width: 53px; right: 4px; top: 9px; transform: rotate(-28deg);
 }
-.corner-tape-top { top: -8px; right: 6px; }
+.corner-tape-top { top: -8px; right: 8px; }
 .corner-tape-bottom { bottom: -3px; right: 4px; }
 .journal-on .journal-feelings h2 { padding-right: 80px; }
-.journal-on .journal-self-time { padding-bottom: 34px; }
+.journal-on .journal-self-time > h2 { padding-right: 70px; }
 .journal-on .wk-grid { position: relative; isolation: isolate; padding-block: 5px; }
 .journal-on .wk-grid::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
@@ -109,7 +109,7 @@ body.journal-on .sidebar {
   display: flex; align-items: flex-start; gap: 10px; margin: 15px 0 2px; padding: 0 4px 0 0;
   color: var(--journal-green); line-height: 1.95; font-size: 15px;
 }
-.journal-support > img { width: 35px; height: 35px; margin-top: 1px; flex: none; object-fit: contain; }
+.journal-support > img { width: 43px; height: 43px; margin-top: 1px; flex: 0 0 43px; object-fit: contain; }
 .journal-support p { white-space: normal; overflow-wrap: anywhere; }
 .journal-marker {
   -webkit-box-decoration-break: clone; box-decoration-break: clone;
@@ -144,22 +144,31 @@ body.journal-on .sidebar {
   .journal-vignette .journal-collage { width: 150px; height: 119px; }
   .journal-vignette .journal-doodle { width: 43px; height: 43px; }
   .journal-support { gap: 6px; font-size: 14px; }
-  .journal-support > img { width: 29px; height: 29px; }
+  .journal-support > img { width: 43px; height: 43px; }
   .journal-plan-chat { padding-inline: 12px; }
-  .corner-tape { transform: rotate(180deg) scale(.88); transform-origin: 50% 50%; }
+  .corner-tape { transform: rotate(65deg) scale(.88); transform-origin: 50% 50%; }
 }
 @media (prefers-reduced-motion: reduce) { .journal-on .wk-row { transition: none; } }
 
 
 body.journal-chat-on {
-  background: #f1eee6 var(--journal-chat-xuan) 50% 0 / 560px auto repeat;
+  background: linear-gradient(#fffdf26b,#fffdf26b), #e9dfb9 var(--journal-chat-sand) center top / 600px auto repeat;
 }
 .journal-chat-on .sidebar {
-  background: linear-gradient(#fffdf4db,#f7f4ecdc), var(--journal-chat-xuan) 0 0 / 560px auto;
+  background: linear-gradient(#fffdf4a8,#fffdf4a8), var(--journal-chat-sand) center top / 600px auto;
+}
+.journal-chat-on .pagehead { position: relative; isolation: isolate; min-height: 145px; }
+.journal-chat-on .pagehead > div:first-child { max-width: 59%; }
+.journal-chat-art {
+  position: absolute; z-index: -1; right: -12px; top: -18px; width: min(44%,340px); height: 165px;
+  background: var(--journal-chat-joy) center / contain no-repeat;
+  mix-blend-mode: multiply; opacity: .82; pointer-events: none;
+  -webkit-mask-image: linear-gradient(transparent,black 8%,black 88%,transparent);
+  mask-image: linear-gradient(transparent,black 8%,black 88%,transparent);
 }
 .journal-chat-on .conversation {
-  background: var(--journal-chat-xuan) center / 460px auto repeat;
-  border-color: #c6c0ad;
+  background: linear-gradient(#fffdf266,#fffdf266), var(--journal-chat-sand) center / 600px auto repeat;
+  border-color: #c6ba96;
 }
 .journal-chat-on .bubble {
   background: #fffcf3; border: 1px solid #bdb5a1;
@@ -169,3 +178,8 @@ body.journal-chat-on {
 .journal-chat-on .bubble small { color: #616857; }
 .journal-chat-on .chat-hello p { background: #fffcf3; border-color: #c7bfa9; }
 .journal-chat-on .composer textarea { background: #fffcf3; border-color: #bdb5a1; }
+@media (max-width: 580px) {
+  .journal-chat-on .pagehead { min-height: 123px; }
+  .journal-chat-on .pagehead > div:first-child { max-width: 59%; }
+  .journal-chat-art { right: -5px; top: -6px; width: 42%; height: 102px; }
+}

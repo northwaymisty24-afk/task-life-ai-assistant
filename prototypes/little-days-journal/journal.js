@@ -120,6 +120,16 @@ const JournalDecor=(function(){
     let [page,view,anchor]=(location.hash.slice(1)||'tasks').split('/');
     if(page==='review'){anchor=view;view='week';page='diary';}
     document.body.classList.toggle('journal-chat-on',page==='chat');
+    if(page==='chat'){
+      const header=main.querySelector('.pagehead');
+      header?.querySelector('.mobile-mark')?.remove();
+      if(header&&!header.querySelector('.journal-chat-art')){
+        const art=document.createElement('div');
+        art.className='journal-chat-art';
+        art.setAttribute('aria-hidden','true');
+        header.append(art);
+      }
+    }
     const enabled=page==='diary'||page==='insights';
     document.body.classList.toggle('journal-on',enabled);
     if(!enabled)return;
@@ -133,7 +143,7 @@ const JournalDecor=(function(){
       stampTitle(cards[0]?.querySelector('h2'),first);
       stampTitle(cards[2]?.querySelector('h2'),second,true);
       cards[1]?.classList.add('journal-self-time');
-      addCorner(cards[1],'bottom');
+      addCorner(cards[1],'top');
       main.querySelectorAll('.pw-head .badge').forEach(el=>el.remove());
       main.querySelectorAll('.bar-col').forEach(col=>{
         if(col.querySelector('strong')?.textContent==='0')col.setAttribute('data-empty','');
