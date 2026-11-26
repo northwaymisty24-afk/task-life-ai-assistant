@@ -721,7 +721,7 @@
       "path": "assets/doodles/cloud-1.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 1
+      "version": 2
     },
     {
       "id": "cloud-2",
@@ -735,7 +735,7 @@
       "path": "assets/doodles/cloud-2.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 1
+      "version": 2
     },
     {
       "id": "cloud-3",
@@ -749,7 +749,7 @@
       "path": "assets/doodles/cloud-3.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 1
+      "version": 2
     },
     {
       "id": "cloud-4",
@@ -763,7 +763,7 @@
       "path": "assets/doodles/cloud-4.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 1
+      "version": 2
     },
     {
       "id": "cloud-5",
@@ -777,7 +777,7 @@
       "path": "assets/doodles/cloud-5.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 1
+      "version": 2
     },
     {
       "id": "cloud-6",
@@ -791,7 +791,7 @@
       "path": "assets/doodles/cloud-6.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 1
+      "version": 2
     },
     {
       "id": "objects-1",
