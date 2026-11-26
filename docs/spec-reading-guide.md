@@ -2,11 +2,13 @@
 
 This page gives new team members the minimum context needed before opening the full Word specification.
 
+**Scope update (2026-11-26):** [MVP SPEC v1.1 for the December 20 deliverable](MVP_SPEC_v1.1_2026-12-20.md) and the [A-side handoff and current status](A-frontend-handoff-2026-11-26.md). The Word v1.0 file remains the earlier engineering baseline; its F6–F9 deferral does not waive the three required features for December 20. The v1.1 amendment is proposed for team contract and schema review; the offline prototype is not an integrated release.
+
 ## What the specification is
 
 `MVP_SPEC_v1.0.docx` is the engineering baseline for the first team implementation. It defines the target responsibility boundaries, the two-table data model, the request and response contracts, the main flows, and the P0 acceptance cases.
 
-It is not the complete PRD. Features F6 to F9 and F11 are outside the first P0 slice unless the lead explicitly changes the scope.
+This describes the 2026-11-17 first P0 slice. The product owner has since set a 2026-12-20 deliverable that must include an integrated diary, weekly review, and experience book. See the v1.1 amendment for the revised scope and acceptance. F11 focus accompaniment remains optional.
 
 ## Target architecture and current implementation
 
@@ -45,9 +47,10 @@ The target architecture separates A, B, and C responsibilities. The current repo
 
 ## Read next
 
-1. [Full technical specification](MVP_SPEC_v1.0.docx)
-2. [Open product questions](open-questions.md)
-3. [Acceptance case matrix](acceptance-cases.md)
+1. [December 20 scope amendment, v1.1](MVP_SPEC_v1.1_2026-12-20.md)
+2. [A-side progress and handoff](A-frontend-handoff-2026-11-26.md)
+3. [Original technical specification, v1.0](MVP_SPEC_v1.0.docx)
 4. [Open product questions](open-questions.md)
-5. [CI/CD guide](ci-cd.md)
+5. [Acceptance case matrix](acceptance-cases.md)
+6. [CI/CD guide](ci-cd.md)
 
