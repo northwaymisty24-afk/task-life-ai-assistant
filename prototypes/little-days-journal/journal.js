@@ -1,7 +1,7 @@
 /* Build inserts a small registry with inline asset URIs before this file. */
 const JournalDecor=(function(){
   const library=JOURNAL_LIBRARY;
-  const paletteVersion='journal-c-c-b-1';
+  const paletteVersion='journal-c-c-b-2';
   const allowed=note=>note.include_in_review!==false&&!note.revoked&&!note.revokedAt;
   function records(range){
     return [...(state.snippets||[]),...(state.diary||[])].filter(n=>range.includes(n.date)&&allowed(n));
@@ -58,26 +58,70 @@ const JournalDecor=(function(){
     ][i];
   }
   function badge(type,title){return '<span class="badge" title="'+esc(title)+'"><img src="'+library.badges[type]+'" width="28" height="28" alt="'+esc(title)+'"></span>';}
+  function decoratePlan(){
+    const card=main.querySelector('[data-plan-toggle]')?.closest('.diary-entry');
+    if(!card||card.querySelector('.journal-plan-actions'))return;
+    card.classList.add('journal-plan');
+    const actions=document.createElement('div');
+    actions.className='journal-plan-actions';
+    let chat=card.querySelector('[data-plan-chat]');
+    if(!chat){
+      chat=document.createElement('button');
+      chat.type='button';
+      chat.dataset.go='chat';
+      chat.dataset.planChat='1';
+    }
+    const add=card.querySelector('[data-new=tomorrow]');
+    const oldActions=add?.parentElement;
+    chat.className='journal-plan-chat';
+    chat.innerHTML=icon('bubble')+'<span>去聊天里说</span><span class="plan-arrow" aria-hidden="true">→</span>';
+    actions.append(chat);
+    if(add)actions.append(add);
+    oldActions?.remove();
+    card.querySelector('.section-head').after(actions);
+  }
+  function decorateSupport(card,day){
+    if(!card)return;
+    card.querySelector('.journal-support')?.remove();
+    card.querySelector('p.empty')?.remove();
+    const block=document.createElement('div');
+    block.className='journal-support';
+    const drawing=document.createElement('img');
+    drawing.src=library.assets.find(a=>a.id==='resting-head').src;
+    drawing.alt='';
+    const paragraph=document.createElement('p'),text=document.createElement('span');
+    text.className='journal-marker';
+    text.textContent=support(weekDays(day));
+    paragraph.append(text);
+    block.append(drawing,paragraph);
+    card.append(block);
+  }
   function enhance(){
     let [page,view,anchor]=(location.hash.slice(1)||'tasks').split('/');
     if(page==='review'){anchor=view;view='week';page='diary';}
-    const enabled=page==='diary'||page==='insights';document.body.classList.toggle('journal-on',enabled);if(!enabled)return;
-    const existing=main.querySelector('.journal-vignette');if(existing)existing.remove();
+    const enabled=page==='diary'||page==='insights';
+    document.body.classList.toggle('journal-on',enabled);
+    if(!enabled)return;
+    main.querySelectorAll('.journal-vignette').forEach(el=>el.remove());
+    main.querySelectorAll(page==='insights'?'.ins':'.diary-entry,.diary-actions,.review-card,.calendar')
+      .forEach(el=>el.classList.add('journal-paper'));
     if(page==='diary'&&view==='week'){
       const day=/^\d{4}-\d{2}-\d{2}$/.test(anchor||'')?anchor:localDate(new Date());
       const cards=main.querySelectorAll('.review-card');
-      cards[0]?.querySelector('h2')?.classList.add('tape-title');
-      cards[1]?.querySelector('h2')?.classList.add('tape-title','tape-coral');
-      // Badges belong to each selected-week row, never to a card corner/header.
+      const tapes=['tape-yellow','tape-lilac','tape-orange'];
+      cards.forEach((card,i)=>card.querySelector('h2')?.classList.add('tape-title',tapes[i]));
       main.querySelectorAll('.pw-head .badge').forEach(el=>el.remove());
-      const life=cards[1];
-      life?.querySelector('p.empty')?.remove();
-      if(life&&!life.querySelector('.journal-support')){const block=document.createElement('div');block.className='journal-support';const p=document.createElement('p');p.textContent=support(weekDays(day));block.append(p);life.append(block);}
-      cards[cards.length-1]?.append(vignette(day,'week'));
+      main.querySelectorAll('.bar-col').forEach(col=>{
+        if(col.querySelector('strong')?.textContent==='0')col.setAttribute('data-empty','');
+      });
+      decorateSupport(cards[1],day);
+      cards[2]?.append(vignette(day,'week'));
     }else if(page==='diary'){
-      main.querySelector('.recap-card h2')?.classList.add('tape-title');
-      main.querySelector('.diary-entry:not(.recap-card) h2')?.classList.add('tape-title','tape-blue');
-      main.querySelector('.workspace > aside')?.append(vignette(localDate(new Date()),'today'));
+      const recap=main.querySelector('.recap-card');
+      recap?.querySelector('h2')?.classList.add('tape-title','tape-yellow');
+      main.querySelector('.diary-entry:not(.recap-card) h2')?.classList.add('tape-title','tape-lilac');
+      recap?.append(vignette(localDate(new Date()),'today'));
+      decoratePlan();
     }
   }
   return {enhance,planFor,contextFor,support,pick,weekNumber,badge};

@@ -1,59 +1,114 @@
-"""Build an offline single-file prototype and an offline asset contact sheet."""
+"""Build the offline journal prototype and its asset gallery."""
 from pathlib import Path
-import base64, json, mimetypes, html
+import base64
+import html
+import json
+import mimetypes
+import re
 
-ROOT=Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parents[1]
+
+
 def data(path):
-    mime=mimetypes.guess_type(path.name)[0] or 'application/octet-stream'
-    return 'data:'+mime+';base64,'+base64.b64encode(path.read_bytes()).decode()
+    mime = mimetypes.guess_type(path.name)[0] or 'application/octet-stream'
+    return f'data:{mime};base64,' + base64.b64encode(path.read_bytes()).decode()
 
-collages=[
- ('tea-pause','慢慢喝杯茶',['rest','neutral']),
- ('sprout-notes','小小的新芽',['learning','neutral']),
- ('sunny-window','窗边的阳光',['outdoors','rest','neutral']),
- ('garden-pause','树下坐一会',['outdoors','learning','neutral'])]
-doodles=[
- ('sun-friend','伸手接一点阳光',['outdoors','neutral']),
- ('little-reader','慢慢读',['learning','neutral']),
- ('tea-friend','茶歇小人',['rest','neutral']),
- ('gentle-stretch','伸个懒腰',['rest','neutral']),
- ('little-walker','出去走走',['outdoors','neutral']),
- ('resting-head','趴一会儿',['rest','neutral']),
- ('small-bloom','一朵小花',['outdoors','neutral']),
- ('bird-branch','枝头小鸟',['outdoors','neutral']),
- ('moon-cloud','月亮和云',['rest','neutral']),
- ('book-spark','书里的一点光',['learning','neutral'])]
-assets=[]
-for kind,items,ext in [('collage',collages,'webp'),('doodle',doodles,'svg')]:
-    folder='collages' if kind=='collage' else 'doodles'
-    for name,label,contexts in items:
-        assets.append(dict(id=name,label=label,kind=kind,contexts=contexts,path=f'assets/{folder}/{name}.{ext}',enabled=True,origin='generated' if kind=='collage' else 'original-svg',version=1))
-manifest={'version':1,'style':'C 底色 / C 胶带 / B 纸质圆章','rotation':'one collage + one doodle per browser-local Monday-based week','assets':assets}
-manifest_file=ROOT/'manifest.json'
-if manifest_file.exists():
-    manifest=json.loads(manifest_file.read_text());assets=manifest['assets']
-else:
-    manifest_file.write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
-registry={'assets':[{**a,'src':data(ROOT/a['path'])} for a in assets],
-          'badges':{k:data(ROOT/f'assets/badges/{k}.svg') for k in ['crown','rose']}}
-textures={'plaster':'plaster.svg','tape-sage':'tape-sage.svg','tape-coral':'tape-coral.svg','tape-blue':'tape-blue.svg','week-waves':'week-waves.svg'}
-vars=':root{'+''.join(f'--journal-{k}:url("{data(ROOT/"assets/textures"/v)}");' for k,v in textures.items())
-sun='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke="#b8a36a" fill="none" stroke-linecap="round"><circle cx="12" cy="12" r="4" fill="#ecd18a"/><path d="M12 1v3m0 16v3M1 12h3m16 0h3M4 4l2 2m12 12l2 2M4 20l2-2M18 6l2-2"/></g></svg>'
-vars+='--journal-sun:url("data:image/svg+xml;base64,'+base64.b64encode(sun.encode()).decode()+'");}'
-source=(ROOT/'base-v9.html').read_text()
-style=vars+'\n'+(ROOT/'journal.css').read_text()
-code='const JOURNAL_LIBRARY='+json.dumps(registry,ensure_ascii=False)+';\n'+(ROOT/'journal.js').read_text()
-result=source.replace('</style>',style+'\n</style>',1).replace('</body>','<script>\n'+code+'\n</script>\n</body>')
-(ROOT/'dist').mkdir(exist_ok=True)
-for name in ['dist/index.html','little-days-h5-journal.html']:(ROOT/name).write_text(result)
 
-tiles=[]
-for a in assets:
-    tiles.append(f'<article data-kind="{a["kind"]}"><img src="{data(ROOT/a["path"])}" alt="{html.escape(a["label"])}"><h3>{html.escape(a["label"])}</h3><p>{a["id"]} · {a["kind"]}</p></article>')
-badges=''.join(f'<article><div class="badges"><img src="{registry["badges"][k]}" alt="{label}" width="96" height="96"><img src="{registry["badges"][k]}" alt="" width="26" height="26"></div><h3>{label}</h3><p>{desc}</p></article>' for k,label,desc in [('crown','小皇冠','只留中间一颗红点'),('rose','细长玫瑰','收窄花头，保留纸质圆章')])
-collage_tiles=''.join(tile for a,tile in zip(assets,tiles) if a['kind']=='collage')
-doodle_tiles=''.join(tile for a,tile in zip(assets,tiles) if a['kind']=='doodle')
-gallery=f'''<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>小日子 · 手账素材库</title><style>
-*{{box-sizing:border-box}}body{{margin:0;background:#f6f0e6;color:#344d3e;font:16px/1.65 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}}main{{max-width:1120px;margin:auto;padding:40px 24px}}h1{{font-size:34px;margin:0}}h2{{margin:30px 0 16px}}p{{color:#687163}}.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}}article{{padding:20px;border:1px solid #ddd6c9;border-radius:18px;background:#fffdf7}}article>img{{width:100%;height:170px;object-fit:contain}}h3{{font-size:17px;margin:12px 0 4px}}article p{{font-size:12px;overflow-wrap:anywhere;margin:0}}.badges{{display:flex;align-items:center;justify-content:center;gap:35px;min-height:110px}}.badges img{{display:block}}.swatch{{height:160px;border-radius:16px;background:var(--journal-plaster);margin-top:18px}}{vars}</style><main><h1>小日子 · 手账素材库</h1><p>C 底色 · C 胶带 · B 纸质圆章<br>每周选一张拼贴和一个小图案；同一周固定，记录只在本机参与选择。</p><div class="swatch" aria-label="浅米色灰泥质感"></div><h2>日历周行旁的小徽章</h2><div class="grid">{badges}</div><h2>胶带拼贴</h2><div class="grid">{collage_tiles}</div><h2>儿童简笔小图案</h2><div class="grid">{doodle_tiles}</div><p>参考图仅用于研究材质、造型与配色。新增素材在 manifest 中登记后即可轮换；完整说明见 README。</p></main></html>'''
-for name in ['gallery.html','dist/gallery.html']:(ROOT/name).write_text(gallery)
-print(f'Built {len(assets)} rotating assets + 2 badges; offline app {len(result.encode()):,} bytes')
+manifest = json.loads((ROOT / 'manifest.json').read_text())
+assets = [{**asset, 'src': data(ROOT / asset['path'])} for asset in manifest['assets']]
+badges = {name: data(ROOT / 'assets/badges' / f'{name}.svg') for name in ('crown', 'rose')}
+registry = {'assets': assets, 'badges': badges}
+textures = {
+    'plaster': 'tuscan-wash.webp',
+    'fiber': 'card-fiber.webp',
+    'week-waves': 'week-waves.svg',
+    'marker': 'marker.svg',
+}
+variables = ':root{' + ''.join(
+    f'--journal-{name}:url("{data(ROOT / "assets/textures" / file)}");' for name, file in textures.items()
+) + '}'
+
+source = (ROOT / 'base-v9.html').read_text()
+dog = re.search(r'^const dog = "(data:image/[^"]+)";', source, re.M)[1]
+source, brand_count = re.subn(r'(<div class="brand"><img src=")[^"]+', lambda m: m[1] + dog, source)
+if brand_count != 1:
+    raise ValueError('Expected one desktop brand mark in the v9 prototype.')
+style = variables + '\n' + (ROOT / 'journal.css').read_text()
+code = 'const JOURNAL_LIBRARY=' + json.dumps(registry, ensure_ascii=False) + ';\n' + (ROOT / 'journal.js').read_text()
+result = source.replace('</style>', style + '\n</style>', 1).replace('</body>', '<script>\n' + code + '\n</script>\n</body>')
+(ROOT / 'dist').mkdir(exist_ok=True)
+for name in ('dist/index.html', 'little-days-h5-journal.html'):
+    (ROOT / name).write_text(result)
+
+
+def asset_tiles(kind):
+    return ''.join(
+        f'<article data-kind="{kind}"><img src="{asset["src"]}" alt=""><h3>{html.escape(asset["label"])}</h3></article>'
+        for asset in assets if asset['kind'] == kind
+    )
+
+
+badge_tiles = ''.join(
+    f'<article><div class="badge-view"><img src="{badges[key]}" alt="" width="84" height="84">'
+    f'<img src="{badges[key]}" alt="" width="26" height="26"></div><h3>{label}</h3><p>{description}</p></article>'
+    for key, label, description in (
+        ('crown', '小皇冠', '只留中间一颗红点'), ('rose', '细长玫瑰', '纸质圆章')
+    )
+)
+reference_dir = ROOT / 'assets/reference'
+reference = json.loads((reference_dir / 'reference-doodles.json').read_text())
+atlas = data(reference_dir / reference['atlas'])
+reference_tiles = ''.join(
+    f'<article data-reference="{item["id"]}"><span class="reference-icon" aria-hidden="true" '
+    f'style="background-position:{-item["column"] * 70}px {-item["row"] * 70}px"></span>'
+    f'<h3>{html.escape(item["label"])}</h3></article>'
+    for item in reference['icons']
+)
+
+gallery = f"""<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>小日子 · 手账素材库</title>
+<style>
+{variables}
+{(ROOT / 'journal.css').read_text().split('body.journal-on', 1)[0]}
+*{{box-sizing:border-box}}
+body{{margin:0;background:#efe6d7 var(--journal-plaster) center top / 620px;color:#384a3a;font:16px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}}
+main{{max-width:1080px;margin:auto;padding:34px 20px 60px}}
+header{{display:flex;align-items:center;gap:14px}}
+header img{{object-fit:contain}}
+h1{{font-size:clamp(24px,6vw,34px);margin:0}}
+h2{{margin:34px 0 16px;font-size:clamp(20px,4.5vw,26px)}}
+p{{color:#5c6557}}
+a{{color:#3d5840;text-underline-offset:3px}}
+.grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:13px}}
+article,.materials{{padding:16px;background:var(--journal-fiber) 0 0 / 285px,#fffcf3;clip-path:var(--paper-edge);min-width:0}}
+article>img{{width:100%;height:135px;object-fit:contain}}
+h3{{font-size:15px;margin:6px 0 2px}}
+article p{{font-size:13px;margin:0}}
+.badge-view{{display:flex;align-items:center;gap:21px;min-height:89px}}
+.materials{{display:flex;flex-wrap:wrap;align-items:center;gap:14px}}
+.materials span{{display:inline-block;padding:4px 12px;clip-path:var(--tape-edge);color:#36483b}}
+.yellow{{background:var(--tape-yellow);background-blend-mode:normal,normal,multiply}}
+.lilac{{background:var(--tape-lilac);background-blend-mode:normal,normal,multiply}}
+.orange{{background:var(--tape-orange);background-blend-mode:normal,multiply}}
+.reference-grid{{grid-template-columns:repeat(auto-fit,minmax(95px,1fr))}}
+.reference-grid article{{padding:8px 2px;text-align:center}}
+.reference-grid h3{{font-size:12px}}
+.reference-icon{{display:block;width:70px;height:70px;margin:auto;background-image:url("{atlas}");
+background-size:{reference['columns'] * 70}px {reference['rows'] * 70}px;background-repeat:no-repeat}}
+</style>
+<main>
+<header><img src="{dog}" alt="" width="51" height="51"><h1>小日子 · 手账素材库</h1></header>
+<p>每周按本机记录选择一张拼贴和一个小图案。<br><a href="little-days-h5-journal.html#diary">看日记里的使用效果</a></p>
+<h2>胶带拼贴</h2><div class="grid">{asset_tiles('collage')}</div>
+<h2>手绘小图案</h2><div class="grid">{asset_tiles('doodle')}</div>
+<h2>纸张、胶带与徽章</h2>
+<div class="materials"><span class="yellow">鹅黄点纹</span><span class="lilac">淡紫格纹</span><span class="orange">暖橙斜纹</span>托斯卡纳灰泥与手工纸</div>
+<div class="grid" style="margin-top:13px">{badge_tiles}</div>
+<h2>参考图全套 · {len(reference['icons'])} 个</h2>
+<p>按原图顺序收录，可逐个查看。日记的每周轮换使用上方原创素材。</p>
+<div class="grid reference-grid">{reference_tiles}</div>
+</main></html>"""
+(ROOT / 'gallery.html').write_text(gallery)
+(ROOT / 'dist/gallery.html').write_text(gallery.replace('href="little-days-h5-journal.html#diary"', 'href="index.html#diary"'))
+print(f'Built {len(assets)} rotating assets, {len(reference["icons"])} reference doodles and 2 badges. Offline app {len(result.encode()):,} bytes.')

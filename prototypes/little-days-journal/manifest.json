@@ -1,6 +1,6 @@
 {
-  "version": 1,
-  "style": "C 底色 / C 胶带 / B 纸质圆章",
+  "version": 2,
+  "style": "C 托斯卡纳灰泥底色 / 彩色纸胶带 / B 纸质圆章",
   "rotation": "one collage + one doodle per browser-local Monday-based week",
   "assets": [
     {
@@ -65,75 +65,75 @@
         "outdoors",
         "neutral"
       ],
-      "path": "assets/doodles/sun-friend.svg",
+      "path": "assets/doodles/sun-friend.webp",
       "enabled": true,
-      "origin": "original-svg",
-      "version": 1
+      "origin": "generated",
+      "version": 2
     },
     {
       "id": "little-reader",
-      "label": "慢慢读",
+      "label": "趴着翻书",
       "kind": "doodle",
       "contexts": [
         "learning",
         "neutral"
       ],
-      "path": "assets/doodles/little-reader.svg",
+      "path": "assets/doodles/little-reader.webp",
       "enabled": true,
-      "origin": "original-svg",
-      "version": 1
+      "origin": "generated",
+      "version": 2
     },
     {
       "id": "tea-friend",
-      "label": "茶歇小人",
-      "kind": "doodle",
-      "contexts": [
-        "rest",
-        "neutral"
-      ],
-      "path": "assets/doodles/tea-friend.svg",
-      "enabled": true,
-      "origin": "original-svg",
-      "version": 1
-    },
-    {
-      "id": "gentle-stretch",
-      "label": "伸个懒腰",
-      "kind": "doodle",
-      "contexts": [
-        "rest",
-        "neutral"
-      ],
-      "path": "assets/doodles/gentle-stretch.svg",
-      "enabled": true,
-      "origin": "original-svg",
-      "version": 1
-    },
-    {
-      "id": "little-walker",
-      "label": "出去走走",
+      "label": "给小芽浇水",
       "kind": "doodle",
       "contexts": [
         "outdoors",
         "neutral"
       ],
-      "path": "assets/doodles/little-walker.svg",
+      "path": "assets/doodles/watering-sprout.webp",
       "enabled": true,
-      "origin": "original-svg",
-      "version": 1
+      "origin": "generated",
+      "version": 2
     },
     {
-      "id": "resting-head",
-      "label": "趴一会儿",
+      "id": "gentle-stretch",
+      "label": "踮脚晾手帕",
       "kind": "doodle",
       "contexts": [
         "rest",
         "neutral"
       ],
-      "path": "assets/doodles/resting-head.svg",
+      "path": "assets/doodles/laundry-stretch.webp",
       "enabled": true,
-      "origin": "original-svg",
-      "version": 1
+      "origin": "generated",
+      "version": 2
+    },
+    {
+      "id": "little-walker",
+      "label": "拄杖去走走",
+      "kind": "doodle",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/little-walker.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 2
+    },
+    {
+      "id": "resting-head",
+      "label": "枕着枕头打盹",
+      "kind": "doodle",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/resting-head.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 2
     },
     {
       "id": "small-bloom",

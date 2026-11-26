@@ -1,34 +1,132 @@
-/* C: quiet plaster + C gingham tape. Reading areas remain calm. */
-:root{--journal-cream:#f6f0e6;--journal-card:#fffdf8ed;--journal-line:#dcd5c7;--journal-tape-shadow:#70674e12;--journal-green:#6a7c61}
-body.journal-on{background:var(--journal-cream) var(--journal-plaster) repeat;background-size:1200px 900px}
-.journal-on .surface{background:var(--journal-card);border-color:var(--journal-line);box-shadow:0 3px 13px var(--journal-tape-shadow)}
-.journal-on .recap-card{background:var(--paper-note)}
-.journal-on .tape-title{position:relative;z-index:0;display:inline-block;max-width:100%;margin-block:2px 9px;font-family:var(--display);line-height:1.55;isolation:isolate}
-.journal-on .tape-title::before{content:"";position:absolute;inset:-3px -8px -2px;z-index:-1;background:var(--journal-tape-sage) repeat;background-size:72px 36px;transform:rotate(-.7deg);clip-path:polygon(1% 0,98% 3%,97% 14%,100% 21%,98% 32%,99% 45%,97.5% 58%,99% 70%,97% 85%,99% 98%,2% 100%,3% 85%,0 71%,2% 56%,.5% 44%,3% 30%,1% 15%);opacity:.88}
-.journal-on .tape-coral::before{background-image:var(--journal-tape-coral);transform:rotate(.5deg)}
-.journal-on .tape-blue::before{background-image:var(--journal-tape-blue);transform:rotate(-.3deg)}
-.journal-on .wk-grid{position:relative;isolation:isolate;padding-block:5px}
-.journal-on .wk-grid::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--journal-week-waves) center/100% 100% no-repeat;pointer-events:none}
-.journal-on .wk-row{border-radius:11px;transition:background .15s}
-.journal-on .wk-row.on{background:#e5ecdfc9;border-color:#a1b395;box-shadow:none}
-.journal-on .wk-end{gap:2px}
-.journal-on .wk-end .badge{width:28px;height:30px;flex:none}
-.journal-on .badge img{display:block;width:28px;height:28px;object-fit:contain}
-.journal-vignette{display:flex;align-items:flex-end;justify-content:center;gap:12px;padding:20px 9px 7px;margin-top:7px;min-width:0;pointer-events:none}
-.journal-vignette .journal-collage{width:min(67%,172px);height:auto;max-height:180px;object-fit:contain}
-.journal-vignette .journal-doodle{width:65px;height:88px;object-fit:contain;flex:none;opacity:.94;transform:rotate(2deg)}
-.journal-vignette[data-place=week]{justify-content:flex-end;max-width:320px;margin:5px 0 0 auto;padding-top:8px}
-.journal-vignette[data-place=week] .journal-collage{width:120px;max-height:130px}
-.journal-vignette[data-place=week] .journal-doodle{width:55px;height:72px}
-.journal-support{display:flex;align-items:flex-start;gap:10px;margin-top:18px;padding:13px 14px;background:#e9eedf91;border-radius:13px;line-height:1.8;font-size:14px}
-.journal-support::before{content:"";width:18px;height:18px;flex:none;margin-top:5px;background:var(--journal-sun) center/contain no-repeat}
-.journal-support p{white-space:normal;overflow-wrap:anywhere}
-.journal-on .ins{background:var(--journal-card)}
-@media(max-width:580px){
-  .journal-vignette{justify-content:center;padding-top:15px;margin-top:0;gap:20px}
-  .journal-vignette .journal-collage{width:130px;max-height:130px}.journal-vignette .journal-doodle{width:58px;height:78px}
-  .journal-on .wk-end .badge{width:21px;height:24px}.journal-on .badge img{width:21px;height:21px}
-  .journal-on .wk-end{gap:0}.journal-on .wk-n{font-size:11px;min-width:23px}
-  .journal-support{padding:11px;font-size:14px}.journal-on .tape-title::before{inset:-2px -5px -1px}
+:root {
+  --journal-green: #466049;
+  --journal-sheet: #fcf8ee;
+  --paper-edge: polygon(0.3% 1px, 10% 2px, 16% 0, 25% 2px, 36% 1px, 47% 2px, 57% 0, 66% 1px, 78% 0, 88% 2px, 98% 1px, 100% 5px, calc(100% - 1px) 17%, 100% 31%, calc(100% - 2px) 47%, 100% 66%, calc(100% - 1px) 82%, 100% calc(100% - 5px), 98% 100%, 88% calc(100% - 2px), 76% 100%, 67% calc(100% - 1px), 55% 100%, 47% calc(100% - 2px), 34% 100%, 21% calc(100% - 2px), 12% 100%, 1% calc(100% - 1px), 0 calc(100% - 6px), 1px 81%, 0 63%, 2px 49%, 0 32%, 1px 16%, 0 5px);
+  --tape-edge: polygon(1% 0, 98% 3%, 97% 14%, 100% 21%, 98% 32%, 99% 45%, 97.5% 58%, 99% 70%, 97% 85%, 99% 98%, 2% 100%, 3% 85%, 0 71%, 2% 56%, .5% 44%, 3% 30%, 1% 15%);
+  --tape-yellow: radial-gradient(ellipse at 4px 4px,#fff9dfaf 0 1.7px,transparent 2.4px) 0 0 / 11px 10px, radial-gradient(circle at 2px 2px,#fff9df94 0 1.1px,transparent 1.7px) 3px 5px / 13px 11px, var(--journal-fiber) 0 0 / 200px, #efcf80;
+  --tape-lilac: repeating-linear-gradient(0deg,#9e79ab24 0 5px,transparent 5px 11px), repeating-linear-gradient(90deg,#9871aa32 0 5px,transparent 5px 11px), var(--journal-fiber) 0 0 / 200px, #dcc8e3;
+  --tape-orange: repeating-linear-gradient(118deg,#fff2dd86 0 2px,transparent 2px 10px), var(--journal-fiber) 0 0 / 200px, #efbc9d;
 }
-@media(prefers-reduced-motion:reduce){.journal-on .wk-row{transition:none}}
+body.journal-on {
+  background: #efe6d7 var(--journal-plaster) 50% 0 / 620px auto repeat;
+}
+body.journal-on .sidebar {
+  background: linear-gradient(#fffaf2e6,#fbf5e9d4), var(--journal-plaster) 0 0 / 620px;
+  border-color: #c2ad914c;
+}
+.brand img, .pagehead .mobile-mark { object-fit: contain; border-radius: 0; }
+.brand strong { position: relative; white-space: nowrap; }
+.brand strong::after {
+  content: ""; width: 15px; height: 14px; position: absolute; top: -6px; right: -13px;
+  background: linear-gradient(110deg,transparent 39%,#7c895c 40% 64%,transparent 65%) 1px 0/6px 7px,
+    linear-gradient(145deg,transparent 40%,#7c895c 41% 63%,transparent 64%) 6px 3px/7px 7px,
+    linear-gradient(175deg,transparent 39%,#7c895c 40% 66%,transparent 67%) 8px 8px/7px 5px;
+  background-repeat: no-repeat;
+}
+.journal-on .surface, .journal-on .ins {
+  background: var(--journal-sheet); border-color: #cebea37a;
+}
+.journal-on .journal-paper {
+  background: transparent; border-color: transparent; box-shadow: none;
+  border-radius: 0; position: relative; isolation: isolate; overflow: visible;
+}
+.journal-paper::before, .journal-paper::after {
+  content: ""; position: absolute; pointer-events: none; z-index: -1;
+}
+.journal-paper::before {
+  inset: 3px 1px -2px 2px; border-radius: 6px 5px 11px 4px;
+  background: #ab927459; box-shadow: 1px 3px 9px #6c53362b, 0 1px 3px #64533b33;
+}
+.journal-paper::after {
+  inset: 0; clip-path: var(--paper-edge);
+  background: linear-gradient(165deg,#fffdf750,#fffaf031), var(--journal-fiber) 0 0 / 330px, var(--journal-sheet);
+  box-shadow: inset 0 0 0 2px #fffdf6b3, inset 0 0 8px #cfbb9a3d;
+}
+.journal-paper:nth-child(even)::after { background-position: 0 0, 73px 133px; }
+.journal-on .tape-title {
+  position: relative; z-index: 0; display: inline-block; max-width: 100%; margin-block: 2px 9px;
+  font-family: var(--display); line-height: 1.5; isolation: isolate;
+}
+.tape-title::before, .journal-vignette::before, .journal-vignette::after {
+  content: ""; position: absolute; clip-path: var(--tape-edge);
+  background: var(--tape-yellow); background-blend-mode: normal, normal, multiply;
+}
+.tape-title::before { inset: -1px -9px -1px; z-index: -1; transform: rotate(-1.3deg); }
+.tape-title.tape-lilac::before { background: var(--tape-lilac); transform: rotate(.8deg); }
+.tape-title.tape-orange::before { background: var(--tape-orange); background-blend-mode: normal, multiply; transform: rotate(-.65deg); }
+.journal-on .wk-grid { position: relative; isolation: isolate; padding-block: 5px; }
+.journal-on .wk-grid::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: var(--journal-week-waves) center/100% 100% no-repeat; pointer-events: none;
+}
+.journal-on .wk-row { border-radius: 11px; transition: background .15s; }
+.journal-on .wk-row.on { background: #e5ecdfc9; border-color: #a1b395; box-shadow: none; }
+.journal-on .wk-end { gap: 2px; }
+.journal-on .wk-end .badge { width: 28px; height: 30px; flex: none; }
+.journal-on .badge img { display: block; width: 28px; height: 28px; object-fit: contain; }
+.journal-on .chart { position: relative; }
+.journal-on .chart::after {
+  content: ""; position: absolute; left: 2%; right: 2%; bottom: 29px; height: 2px; pointer-events: none;
+  background: #8a947363; clip-path: polygon(0 34%,24% 20%,52% 38%,74% 16%,100% 38%,99% 78%,67% 71%,43% 95%,19% 63%,0 90%);
+}
+.journal-on .bar {
+  border-radius: 0; width: min(84%,43px); background: var(--journal-fiber) 0 0 / 185px, #a9b58a;
+  background-blend-mode: multiply; box-shadow: inset 0 0 4px #76835b38;
+  clip-path: polygon(2% 2px,18% 0,37% 1px,62% 0,83% 1px,98% 0,100% 5px,98% 38%,100% 68%,98% 100%,18% calc(100% - 1px),0 100%,2% 65%,0 33%);
+}
+.journal-on .bar-col:nth-child(2n) .bar { background-position: 54px 88px; background-color: #b4be96; }
+.journal-on .bar-col:nth-child(3n) .bar { background-position: 31px 72px; background-color: #99aa7e; }
+.journal-on .bar-col[data-empty] .bar { height: 2px; opacity: .38; }
+.journal-vignette {
+  position: relative; display: flex; align-items: flex-end; justify-content: center;
+  gap: 13px; width: fit-content; max-width: 100%; min-width: 0; margin: 14px 0 0 auto;
+  padding: 9px 11px 5px 19px; pointer-events: none;
+}
+.journal-vignette::before { width: 52px; height: 15px; top: 12px; left: -3px; transform: rotate(-15deg); opacity: .77; }
+.journal-vignette::after { width: 43px; height: 13px; bottom: 2px; right: 2px; transform: rotate(11deg); background: var(--tape-lilac); opacity: .72; }
+.journal-vignette .journal-collage { width: 108px; max-width: 62%; height: 76px; object-fit: contain; position: relative; z-index: 1; }
+.journal-vignette .journal-doodle { width: 57px; max-width: 34%; height: 53px; object-fit: contain; transform: rotate(3deg); }
+.journal-vignette[data-place=week] { margin-top: 11px; }
+.journal-support {
+  display: flex; align-items: flex-start; gap: 10px; margin: 15px 0 2px; padding: 0 4px 0 0;
+  color: var(--journal-green); line-height: 1.95; font-size: 15px;
+}
+.journal-support > img { width: 35px; height: 35px; margin-top: 1px; flex: none; object-fit: contain; }
+.journal-support p { white-space: normal; overflow-wrap: anywhere; }
+.journal-marker {
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+  padding: 0 4px 2px; background: var(--journal-marker) left 80% / 100% 1.15em no-repeat;
+}
+.journal-plan .section-head { flex-wrap: wrap; gap: 4px 16px; }
+.journal-plan .section-head > .plan-toggle { justify-content: flex-start; }
+.journal-plan-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; margin-top: 11px; }
+.journal-plan-chat {
+  position: relative; isolation: isolate; display: inline-flex; align-items: center; gap: 9px; min-height: 48px;
+  padding: 8px 14px; font-size: 16px; font-weight: 700; color: #3f4e33; text-align: left;
+}
+.journal-plan-chat::before {
+  content: ""; position: absolute; z-index: -1; inset: 4px 0 3px; transform: rotate(-1deg);
+  clip-path: var(--tape-edge); background: var(--tape-yellow); background-blend-mode: normal, normal, multiply;
+}
+.journal-plan-chat:hover::before { background-color: #efc365; }
+.journal-plan-chat svg { width: 21px; height: 21px; flex: none; }
+.journal-plan-chat .plan-arrow { font-size: 20px; line-height: 1; }
+@media (max-width: 820px) {
+  .journal-on .sidebar { background-color: #fbf5e9; }
+}
+@media (max-width: 580px) {
+  .journal-on .wk-end .badge { width: 21px; height: 24px; }
+  .journal-on .badge img { width: 21px; height: 21px; }
+  .journal-on .wk-end { gap: 0; }
+  .journal-on .wk-n { font-size: 11px; min-width: 23px; }
+  .journal-on .tape-title::before { inset-inline: -6px; }
+  .journal-on .bar-col span, .journal-on .bar-col strong { font-size: 12px; }
+  .journal-on .chart::after { bottom: 25px; }
+  .journal-on .chart { gap: 4px; }
+  .journal-vignette .journal-collage { width: 94px; height: 67px; }
+  .journal-vignette .journal-doodle { width: 49px; height: 46px; }
+  .journal-support { gap: 6px; font-size: 14px; }
+  .journal-support > img { width: 29px; height: 29px; }
+  .journal-plan-chat { padding-inline: 12px; }
+}
+@media (prefers-reduced-motion: reduce) { .journal-on .wk-row { transition: none; } }
