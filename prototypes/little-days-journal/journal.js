@@ -123,6 +123,8 @@ const JournalDecor=(function(){
     if(page==='chat'){
       const header=main.querySelector('.pagehead');
       header?.querySelector('.mobile-mark')?.remove();
+      header?.querySelector('p')?.remove();
+      main.querySelector('.composer textarea')?.setAttribute('placeholder','记待办、拆步骤，或者聊聊卡在了哪里…');
       if(header&&!header.querySelector('.journal-chat-art')){
         const art=document.createElement('div');
         art.className='journal-chat-art';

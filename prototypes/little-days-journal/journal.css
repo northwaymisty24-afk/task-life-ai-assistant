@@ -158,7 +158,7 @@ body.journal-chat-on { background: var(--paper) var(--grain); }
   inset: 0 0 auto; height: 275px;
   background: radial-gradient(ellipse at 82% 3%, #eadcae8c, #f7f1df5c 46%, #faf7f200 78%);
 }
-.journal-chat-on .pagehead { position: relative; min-height: 185px; align-items: flex-start; }
+.journal-chat-on .pagehead { position: relative; min-height: 145px; align-items: flex-start; }
 .journal-chat-on .pagehead > div:first-child { position: relative; z-index: 1; max-width: 55%; }
 .journal-chat-on .pagehead::before {
   content: ""; position: absolute; z-index: -1; pointer-events: none;
@@ -169,8 +169,8 @@ body.journal-chat-on { background: var(--paper) var(--grain); }
   mask-image: radial-gradient(ellipse at 62% 26%, #000 12%, #0007 45%, transparent 73%);
 }
 .journal-chat-art {
-  position: absolute; z-index: 0; right: -5px; top: -28px; width: min(69%,650px); height: 235px;
-  background: var(--journal-chat-joy) center / contain no-repeat;
+  position: absolute; z-index: 0; left: 125px; top: -26px; width: min(calc(100% - 125px),780px); height: 235px;
+  background: var(--journal-chat-joy) center 65% / 100% auto no-repeat;
   filter: grayscale(1) brightness(1.08) contrast(1.35);
   mix-blend-mode: multiply; opacity: .85; pointer-events: none;
   -webkit-mask-image: radial-gradient(ellipse 70% 67% at 50% 42%, #000 51%, transparent 79%);
@@ -189,9 +189,9 @@ body.journal-chat-on { background: var(--paper) var(--grain); }
 .journal-chat-on .chat-hello p { background: #fffcf3; border-color: #c7bfa9; }
 .journal-chat-on .composer textarea { background: #fffcf3; border-color: #bdb5a1; }
 @media (max-width: 580px) {
-  .journal-chat-on .pagehead { min-height: 196px; }
+  .journal-chat-on .pagehead { min-height: 138px; }
   .journal-chat-on .pagehead > div:first-child { max-width: 100%; }
   .journal-chat-on .pagehead::before { inset: -22px -16px -16px; }
   .journal-chat-on main::before { height: 260px; }
-  .journal-chat-art { right: -8px; left: -8px; top: 63px; width: auto; height: 148px; }
+  .journal-chat-art { right: -8px; left: 53px; top: -18px; width: auto; height: 185px; background-position: center 60%; }
 }
