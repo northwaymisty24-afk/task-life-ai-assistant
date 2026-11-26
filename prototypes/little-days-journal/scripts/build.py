@@ -55,6 +55,26 @@ dog = re.search(r'^const dog = "(data:image/[^"]+)";', source, re.M)[1]
 source, brand_count = re.subn(r'(<div class="brand"><img src=")[^"]+', lambda m: m[1] + dog, source)
 if brand_count != 1:
     raise ValueError('Expected one desktop brand mark in the v9 prototype.')
+# Keep the original v9 source intact. Both task lists use the same orderRow()
+# handle, so one replacement gives them the same single-colour drawn paw.
+paw = (
+    '<g fill="none" stroke="currentColor" stroke-width="1.45" '
+    'stroke-linecap="round" stroke-linejoin="round">'
+    '<ellipse cx="5.4" cy="10" rx="1.45" ry="1.85" transform="rotate(-20 5.4 10)"/>'
+    '<ellipse cx="9.2" cy="6.9" rx="1.5" ry="2.05" transform="rotate(-8 9.2 6.9)"/>'
+    '<ellipse cx="14.1" cy="6.8" rx="1.5" ry="2.1" transform="rotate(9 14.1 6.8)"/>'
+    '<ellipse cx="18.4" cy="9.8" rx="1.4" ry="1.8" transform="rotate(21 18.4 9.8)"/>'
+    '<path d="M7.4 16.7c.1-1.3 1.4-2.1 2.4-3.3.7-.8 1.2-1.5 2.2-1.5 '
+    '1.1 0 1.8 1.1 2.5 1.9 1 .9 2.1 1.5 2.1 2.7 '
+    '.1 1.7-1.2 2.5-2.8 2.4-.9 0-1.3-.4-2.1-.4 '
+    '-1 0-1.5.5-2.5.5-1.5.1-2.7-.8-2.8-2.3z"/>'
+    '</g>'
+)
+if source.count('const icons = {') != 1 or source.count('icon("hand")') != 1:
+    raise ValueError('Expected one icon registry and one shared drag handle.')
+source = source.replace('const icons = {', 'const icons = {"paw": ' + json.dumps(paw) + ',', 1)
+source = source.replace('icon("hand")', 'icon("paw")', 1)
+source = source.replace('右边的小手', '右边的狗爪')
 journal_css = (ROOT / 'journal.css').read_text()
 style = '\n'.join((variables, tape_css, journal_css))
 code = 'const JOURNAL_LIBRARY=' + json.dumps(registry, ensure_ascii=False) + ';\n' + (ROOT / 'journal.js').read_text()
