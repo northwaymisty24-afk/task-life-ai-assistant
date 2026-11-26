@@ -59,7 +59,7 @@ body.journal-on .sidebar {
 }
 .tape-title::before { inset: -1px -9px -1px; transform: rotate(-1.3deg); }
 .tape-title.tape-second::before { transform: rotate(.8deg); }
-.corner-tape { position: absolute; display: block; width: 92px; height: 36px; pointer-events: none; }
+.corner-tape { position: absolute; display: block; width: 92px; height: 36px; pointer-events: none; transform: rotate(180deg); }
 .corner-tape i {
   display: block; height: 15px; background: var(--corner-grid), var(--corner-color);
   background-blend-mode: normal, normal, multiply, normal; opacity: .91;
@@ -99,11 +99,11 @@ body.journal-on .sidebar {
 .journal-on .bar-col[data-empty] .bar { height: 2px; opacity: .38; }
 .journal-vignette {
   position: relative; display: flex; align-items: flex-end; justify-content: center;
-  gap: 13px; width: fit-content; max-width: 100%; min-width: 0; margin: 14px 0 0 auto;
+  gap: 21px; width: fit-content; max-width: 100%; min-width: 0; margin: 14px 0 0 auto;
   padding: 9px 11px 5px 19px; pointer-events: none;
 }
-.journal-vignette .journal-collage { width: 108px; max-width: 62%; height: 76px; object-fit: contain; position: relative; z-index: 1; }
-.journal-vignette .journal-doodle { width: 57px; max-width: 34%; height: 53px; object-fit: contain; transform: rotate(3deg); }
+.journal-vignette .journal-collage { width: 168px; max-width: 70%; height: 135px; object-fit: contain; position: relative; z-index: 1; }
+.journal-vignette .journal-doodle { width: 48px; max-width: 25%; height: 49px; object-fit: contain; transform: rotate(3deg); }
 .journal-vignette[data-place=week] { margin-top: 11px; }
 .journal-support {
   display: flex; align-items: flex-start; gap: 10px; margin: 15px 0 2px; padding: 0 4px 0 0;
@@ -141,11 +141,31 @@ body.journal-on .sidebar {
   .journal-on .bar-col span, .journal-on .bar-col strong { font-size: 12px; }
   .journal-on .chart::after { bottom: 25px; }
   .journal-on .chart { gap: 4px; }
-  .journal-vignette .journal-collage { width: 94px; height: 67px; }
-  .journal-vignette .journal-doodle { width: 49px; height: 46px; }
+  .journal-vignette .journal-collage { width: 150px; height: 119px; }
+  .journal-vignette .journal-doodle { width: 43px; height: 43px; }
   .journal-support { gap: 6px; font-size: 14px; }
   .journal-support > img { width: 29px; height: 29px; }
   .journal-plan-chat { padding-inline: 12px; }
-  .corner-tape { transform: scale(.88); transform-origin: 100% 50%; }
+  .corner-tape { transform: rotate(180deg) scale(.88); transform-origin: 50% 50%; }
 }
 @media (prefers-reduced-motion: reduce) { .journal-on .wk-row { transition: none; } }
+
+
+body.journal-chat-on {
+  background: #f1eee6 var(--journal-chat-xuan) 50% 0 / 560px auto repeat;
+}
+.journal-chat-on .sidebar {
+  background: linear-gradient(#fffdf4db,#f7f4ecdc), var(--journal-chat-xuan) 0 0 / 560px auto;
+}
+.journal-chat-on .conversation {
+  background: var(--journal-chat-xuan) center / 460px auto repeat;
+  border-color: #c6c0ad;
+}
+.journal-chat-on .bubble {
+  background: #fffcf3; border: 1px solid #bdb5a1;
+  box-shadow: 0 1px 2px #62543c12; color: #303b30;
+}
+.journal-chat-on .user .bubble { background: #dce6d7; border-color: #a7b49f; }
+.journal-chat-on .bubble small { color: #616857; }
+.journal-chat-on .chat-hello p { background: #fffcf3; border-color: #c7bfa9; }
+.journal-chat-on .composer textarea { background: #fffcf3; border-color: #bdb5a1; }

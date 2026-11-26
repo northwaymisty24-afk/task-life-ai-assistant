@@ -42,6 +42,7 @@ textures = {
     'fiber': 'card-fiber.webp',
     'week-waves': 'week-waves.svg',
     'marker': 'marker.svg',
+    'chat-xuan': 'chat-xuan.webp',
 }
 variables = ':root{' + ''.join(
     f'--journal-{name}:url("{data(ROOT / "assets/textures" / file)}");' for name, file in textures.items()
@@ -128,6 +129,7 @@ a{{color:#3d5840;text-underline-offset:3px}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:13px}}
 article,.materials{{padding:16px;background:var(--journal-fiber) 0 0 / 285px,#fffcf3;clip-path:var(--paper-edge);min-width:0}}
 article>img{{width:100%;height:135px;object-fit:contain}}
+article[data-kind="collage"]>img{{height:180px}}
 h3{{font-size:15px;margin:6px 0 2px}}
 article p{{font-size:13px;margin:0}}
 .badge-view{{display:flex;align-items:center;gap:21px;min-height:89px}}

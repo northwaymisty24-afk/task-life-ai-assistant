@@ -7,7 +7,8 @@
       "sha": "4474889dffac432eec87777c116be14564cfd5f8",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/0a12c7e875f9f0eb853edf3094e42587.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/01.webp"
+      "asset": "assets/collages/photos/01.webp",
+      "background_removed": true
     },
     {
       "path": "118b675fb0f6d0c65a53d65b666c109d.jpg",
@@ -20,42 +21,48 @@
         "width": 572,
         "height": 365
       },
-      "asset": "assets/collages/photos/02.webp"
+      "asset": "assets/collages/photos/02.webp",
+      "background_removed": true
     },
     {
       "path": "2163ca12dd2b5fd9a65b80859d31ee75.jpg",
       "sha": "3d1aa3360265622fda9549b55018ea798a82f5eb",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/2163ca12dd2b5fd9a65b80859d31ee75.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/03.webp"
+      "asset": "assets/collages/photos/03.webp",
+      "background_removed": true
     },
     {
       "path": "23e6d604bfa2b365aa965c49fa93dd4d.jpg",
       "sha": "d1141f788e7edb7adf059611c15600730d96f8ea",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/23e6d604bfa2b365aa965c49fa93dd4d.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/04.webp"
+      "asset": "assets/collages/photos/04.webp",
+      "background_removed": true
     },
     {
       "path": "4173ad7038daa8fa490886170ac82f43.jpg",
       "sha": "92271c70d1661212d1a49378cfe471a9026adebd",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/4173ad7038daa8fa490886170ac82f43.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/05.webp"
+      "asset": "assets/collages/photos/05.webp",
+      "background_removed": true
     },
     {
       "path": "4353317924b1bdc534960bfee2a9b011.jpg",
       "sha": "87c62c5572227b03693dda317a108bf59e63ea63",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/4353317924b1bdc534960bfee2a9b011.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/06.webp"
+      "asset": "assets/collages/photos/06.webp",
+      "background_removed": true
     },
     {
       "path": "4752d70e34ef46d1cfcad0748a631a7c.jpg",
       "sha": "f08816c63f8df660423d12f5ce8c6f8af25f9094",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/4752d70e34ef46d1cfcad0748a631a7c.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/07.webp"
+      "asset": "assets/collages/photos/07.webp",
+      "background_removed": true
     },
     {
       "path": "4886978c7b79c6e3582c0f4bbedfeae8.jpg",
@@ -68,28 +75,32 @@
         "width": 581,
         "height": 302
       },
-      "asset": "assets/collages/photos/08.webp"
+      "asset": "assets/collages/photos/08.webp",
+      "background_removed": true
     },
     {
       "path": "51a17ded04511a976ee5cac3f7bd5625.jpg",
       "sha": "ac209e4d99056e54ee2cdd58d5d2e518174f20c6",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/51a17ded04511a976ee5cac3f7bd5625.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/09.webp"
+      "asset": "assets/collages/photos/09.webp",
+      "background_removed": true
     },
     {
       "path": "54443c6b564079d4e62a1fe79e93d9b0.jpg",
       "sha": "061a84a0190eb773fe288fd6f2220295e68a0c65",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/54443c6b564079d4e62a1fe79e93d9b0.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/10.webp"
+      "asset": "assets/collages/photos/10.webp",
+      "background_removed": true
     },
     {
       "path": "552619c4106f84ae858087652b7510f1.jpg",
       "sha": "67817ecea9a6f444d89e1935b8f18e84129b48cd",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/552619c4106f84ae858087652b7510f1.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/11.webp"
+      "asset": "assets/collages/photos/11.webp",
+      "background_removed": true
     },
     {
       "path": "691c4b659b42c7abdbc4024575b0cf2b.jpg",
@@ -102,7 +113,8 @@
         "width": 382,
         "height": 317
       },
-      "asset": "assets/collages/photos/12.webp"
+      "asset": "assets/collages/photos/12.webp",
+      "background_removed": true
     },
     {
       "path": "694fbeabe4d6b4771962c24395103219.jpg",
@@ -115,49 +127,56 @@
         "width": 397,
         "height": 443
       },
-      "asset": "assets/collages/photos/13.webp"
+      "asset": "assets/collages/photos/13.webp",
+      "background_removed": true
     },
     {
       "path": "6a3e3f4e96abd6879aedaf06db21ae85.jpg",
       "sha": "866d76b19b119bb64229cbca0a0873b3f7f21eca",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/6a3e3f4e96abd6879aedaf06db21ae85.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/14.webp"
+      "asset": "assets/collages/photos/14.webp",
+      "background_removed": true
     },
     {
       "path": "6eb7f186e93a328299771a31bfe1f5ff.jpg",
       "sha": "43f562ec04ecb3782f31baa8d34c338ed7aa9dab",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/6eb7f186e93a328299771a31bfe1f5ff.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/15.webp"
+      "asset": "assets/collages/photos/15.webp",
+      "background_removed": true
     },
     {
       "path": "785785e6100c68927c07a8278518f648.jpg",
       "sha": "1fd7502573c82a003176b58a13c678642157d707",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/785785e6100c68927c07a8278518f648.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/16.webp"
+      "asset": "assets/collages/photos/16.webp",
+      "background_removed": true
     },
     {
       "path": "79545b40f75170cc9efd0a99ed03a8e2.jpg",
       "sha": "309d0d2e9bde7258933e08061a2ab3f23a6db80d",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/79545b40f75170cc9efd0a99ed03a8e2.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/17.webp"
+      "asset": "assets/collages/photos/17.webp",
+      "background_removed": true
     },
     {
       "path": "83fce60aafa0538a3ef85ec502a598e1.jpg",
       "sha": "6becf4b127ec8c888534e8fc7e8e50b2810343e2",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/83fce60aafa0538a3ef85ec502a598e1.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/18.webp"
+      "asset": "assets/collages/photos/18.webp",
+      "background_removed": true
     },
     {
       "path": "8468e367f2f1e1e17d720cec8644e640.jpg",
       "sha": "660691517617de4ee50140f6aac4fc756c186166",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/8468e367f2f1e1e17d720cec8644e640.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/19.webp"
+      "asset": "assets/collages/photos/19.webp",
+      "background_removed": true
     },
     {
       "path": "89552dd347d1ae1355459a75d448e8fe.jpg",
@@ -170,28 +189,32 @@
         "width": 618,
         "height": 771
       },
-      "asset": "assets/collages/photos/20.webp"
+      "asset": "assets/collages/photos/20.webp",
+      "background_removed": true
     },
     {
       "path": "8c4e4f633aa565c04ffc17180bd365a1.jpg",
       "sha": "e3d9b1f54f9d34d483651badae47caf17612a5dd",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/8c4e4f633aa565c04ffc17180bd365a1.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/21.webp"
+      "asset": "assets/collages/photos/21.webp",
+      "background_removed": true
     },
     {
       "path": "8d5fdef7dc57e916de6240a95c698db0.jpg",
       "sha": "cff58303f5caeaf86ec8ecb1ab3319f71dd571cf",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/8d5fdef7dc57e916de6240a95c698db0.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/22.webp"
+      "asset": "assets/collages/photos/22.webp",
+      "background_removed": true
     },
     {
       "path": "9c998f38edcfd97b69386f142e0a6d45.jpg",
       "sha": "77a084b7c00ee614a06434e3fecdd646c2f5d8ba",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/9c998f38edcfd97b69386f142e0a6d45.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/23.webp"
+      "asset": "assets/collages/photos/23.webp",
+      "background_removed": true
     },
     {
       "path": "a8362b6050d25725589a6ae972fcd272.jpg",
@@ -204,7 +227,8 @@
         "width": 499,
         "height": 391
       },
-      "asset": "assets/collages/photos/24.webp"
+      "asset": "assets/collages/photos/24.webp",
+      "background_removed": true
     },
     {
       "path": "acc7ea9bbf1f9f06d205465d510fdd60.jpg",
@@ -217,7 +241,8 @@
         "width": 374,
         "height": 419
       },
-      "asset": "assets/collages/photos/25.webp"
+      "asset": "assets/collages/photos/25.webp",
+      "background_removed": true
     },
     {
       "path": "b3cdf0df5c29ac47f32f7bc3c32cd44d.jpg",
@@ -230,21 +255,24 @@
         "width": 436,
         "height": 337
       },
-      "asset": "assets/collages/photos/26.webp"
+      "asset": "assets/collages/photos/26.webp",
+      "background_removed": true
     },
     {
       "path": "b8decf80f58e36a7d959962385c45893.jpg",
       "sha": "c88d992d6513f79ef3d42134307e8dcf0f48be48",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/b8decf80f58e36a7d959962385c45893.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/27.webp"
+      "asset": "assets/collages/photos/27.webp",
+      "background_removed": true
     },
     {
       "path": "b9f92c2f4a8cd95c9f728ef3e943514e.jpg",
       "sha": "2dfee1731172fe61be958a40b7534153972c84b8",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/b9f92c2f4a8cd95c9f728ef3e943514e.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/28.webp"
+      "asset": "assets/collages/photos/28.webp",
+      "background_removed": true
     },
     {
       "path": "bf06c2b70d57746dd3183ce5460f31a8.jpg",
@@ -257,49 +285,56 @@
         "width": 1060,
         "height": 752
       },
-      "asset": "assets/collages/photos/29.webp"
+      "asset": "assets/collages/photos/29.webp",
+      "background_removed": true
     },
     {
       "path": "c5e50042716b2e3a4c4826210101d937.jpg",
       "sha": "48d9355038fa6b18b9ddbb5a318901a5c9715171",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/c5e50042716b2e3a4c4826210101d937.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/30.webp"
+      "asset": "assets/collages/photos/30.webp",
+      "background_removed": true
     },
     {
       "path": "cbfb95f557d9e4f1fdeaf435cc69fb2d.jpg",
       "sha": "5becc3ed6c1553725d3578abc5746d346dd0b7ed",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/cbfb95f557d9e4f1fdeaf435cc69fb2d.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/31.webp"
+      "asset": "assets/collages/photos/31.webp",
+      "background_removed": true
     },
     {
       "path": "cf16420ecb4772a8822e2aabcda9fd06.jpg",
       "sha": "5a9382bb4695220e18547b949f88c0b5e71642fa",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/cf16420ecb4772a8822e2aabcda9fd06.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/32.webp"
+      "asset": "assets/collages/photos/32.webp",
+      "background_removed": true
     },
     {
       "path": "e435d59f7724868541c9cf12c0fffdb6.jpg",
       "sha": "c05dc459d11cac0c2e18f575dee61fb49f259293",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/e435d59f7724868541c9cf12c0fffdb6.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/33.webp"
+      "asset": "assets/collages/photos/33.webp",
+      "background_removed": true
     },
     {
       "path": "e8a6e87adc04ecb3850955def8f60e7d.jpg",
       "sha": "c69317e1eb8f6a92ed939af3facdd36718c27a3a",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/e8a6e87adc04ecb3850955def8f60e7d.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/34.webp"
+      "asset": "assets/collages/photos/34.webp",
+      "background_removed": true
     },
     {
       "path": "f06fae0809296395298cf696baf7be25.jpg",
       "sha": "443bef10f57e9caa5ab3b7071dbfca6c64ef6019",
       "url": "https://github.com/northwaymisty24-afk/task-life-ai-assistant/blob/feature/photos/f06fae0809296395298cf696baf7be25.jpg",
       "usage": "collage",
-      "asset": "assets/collages/photos/35.webp"
+      "asset": "assets/collages/photos/35.webp",
+      "background_removed": true
     },
     {
       "path": "f577af6792b195d54c6f98fcd09bb696.jpg",
@@ -312,7 +347,8 @@
         "width": 677,
         "height": 306
       },
-      "asset": "assets/collages/photos/36.webp"
+      "asset": "assets/collages/photos/36.webp",
+      "background_removed": true
     }
   ]
 }

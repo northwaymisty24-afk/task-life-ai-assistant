@@ -119,6 +119,7 @@ const JournalDecor=(function(){
   function enhance(){
     let [page,view,anchor]=(location.hash.slice(1)||'tasks').split('/');
     if(page==='review'){anchor=view;view='week';page='diary';}
+    document.body.classList.toggle('journal-chat-on',page==='chat');
     const enabled=page==='diary'||page==='insights';
     document.body.classList.toggle('journal-on',enabled);
     if(!enabled)return;
