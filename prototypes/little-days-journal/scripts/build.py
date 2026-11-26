@@ -17,7 +17,26 @@ def data(path):
 manifest = json.loads((ROOT / 'manifest.json').read_text())
 assets = [{**asset, 'src': data(ROOT / asset['path'])} for asset in manifest['assets']]
 badges = {name: data(ROOT / 'assets/badges' / f'{name}.svg') for name in ('crown', 'rose')}
-registry = {'assets': assets, 'badges': badges}
+tape_catalog = json.loads((ROOT / 'tapes.json').read_text())
+tape_pairs = tape_catalog['pairs']
+tape_specs = tape_catalog['tapes']
+pair_members = [key for pair in tape_pairs for key in pair]
+if (
+    any(len(pair) != 2 for pair in tape_pairs)
+    or len(pair_members) != len(set(pair_members))
+    or set(pair_members) != set(tape_specs)
+    or not any(a == tape_catalog['firstPair'] for a, _ in tape_pairs)
+):
+    raise ValueError('Each title tape must belong to exactly one weekly pair.')
+registry = {
+    'assets': assets, 'badges': badges,
+    'tapes': {key: tape_catalog[key] for key in ('firstWeek', 'firstPair', 'pairs')},
+}
+tape_css = '\n'.join(
+    f'[data-tape="{key}"]{{--tape-pattern:url("{data(ROOT / "assets/textures/tapes" / spec["file"])}");'
+    f'--tape-size:{spec.get("size", "28px 18px")};--tape-base:{spec["color"]};--tape-ink:{spec["text"]}}}'
+    for key, spec in tape_specs.items()
+)
 textures = {
     'plaster': 'tuscan-wash.webp',
     'fiber': 'card-fiber.webp',
@@ -33,7 +52,8 @@ dog = re.search(r'^const dog = "(data:image/[^"]+)";', source, re.M)[1]
 source, brand_count = re.subn(r'(<div class="brand"><img src=")[^"]+', lambda m: m[1] + dog, source)
 if brand_count != 1:
     raise ValueError('Expected one desktop brand mark in the v9 prototype.')
-style = variables + '\n' + (ROOT / 'journal.css').read_text()
+journal_css = (ROOT / 'journal.css').read_text()
+style = '\n'.join((variables, tape_css, journal_css))
 code = 'const JOURNAL_LIBRARY=' + json.dumps(registry, ensure_ascii=False) + ';\n' + (ROOT / 'journal.js').read_text()
 result = source.replace('</style>', style + '\n</style>', 1).replace('</body>', '<script>\n' + code + '\n</script>\n</body>')
 (ROOT / 'dist').mkdir(exist_ok=True)
@@ -41,11 +61,35 @@ for name in ('dist/index.html', 'little-days-h5-journal.html'):
     (ROOT / name).write_text(result)
 
 
-def asset_tiles(kind):
+def asset_tiles(kind, group=None):
     return ''.join(
-        f'<article data-kind="{kind}"><img src="{asset["src"]}" alt=""><h3>{html.escape(asset["label"])}</h3></article>'
-        for asset in assets if asset['kind'] == kind
+        f'<article data-kind="{kind}" data-group="{asset.get("group", "original")}">'
+        f'<img loading="lazy" src="{asset["src"]}" alt=""><h3>{html.escape(asset["label"])}</h3></article>'
+        for asset in assets if asset['kind'] == kind and asset.get('group') == group
     )
+
+
+def section(title, tiles, id=""):
+    section_id = f' id="{id}"' if id else ""
+    return f'<section{section_id}><h2>{title}</h2><div class="grid">{tiles}</div></section>'
+
+
+drawing_grids = ''.join(
+    section(title, asset_tiles('doodle', group), 'drawings' if group == 'girl' else '')
+    for group, title in (
+        ('girl', '活动人物 · 小女孩'), ('cloud', '活动人物 · 云朵头'),
+        ('objects', '日常物件'), ('animals', '动物'), ('food', '美食'), ('replace', '重画的四枚小图'),
+    )
+)
+tape_tiles = ''.join(
+    f'<article class="tape-set"><p>第 {index} 组</p><div class="materials">'
+    + ''.join(
+        f'<span class="swatch" data-tape="{key}"><i aria-hidden="true"></i>'
+        f'{tape_specs[key]["label"]} · {tape_specs[key]["pattern"]}</span>'
+        for key in pair
+    ) + '</div></article>'
+    for index, pair in enumerate(tape_pairs, 1)
+)
 
 
 badge_tiles = ''.join(
@@ -70,7 +114,8 @@ gallery = f"""<!doctype html>
 <title>小日子 · 手账素材库</title>
 <style>
 {variables}
-{(ROOT / 'journal.css').read_text().split('body.journal-on', 1)[0]}
+{tape_css}
+{journal_css}
 *{{box-sizing:border-box}}
 body{{margin:0;background:#efe6d7 var(--journal-plaster) center top / 620px;color:#384a3a;font:16px/1.6 -apple-system,BlinkMacSystemFont,"PingFang SC",sans-serif}}
 main{{max-width:1080px;margin:auto;padding:34px 20px 60px}}
@@ -86,11 +131,12 @@ article>img{{width:100%;height:135px;object-fit:contain}}
 h3{{font-size:15px;margin:6px 0 2px}}
 article p{{font-size:13px;margin:0}}
 .badge-view{{display:flex;align-items:center;gap:21px;min-height:89px}}
-.materials{{display:flex;flex-wrap:wrap;align-items:center;gap:14px}}
-.materials span{{display:inline-block;padding:4px 12px;clip-path:var(--tape-edge);color:#36483b}}
-.yellow{{background:var(--tape-yellow);background-blend-mode:normal,normal,multiply}}
-.lilac{{background:var(--tape-lilac);background-blend-mode:normal,normal,multiply}}
-.orange{{background:var(--tape-orange);background-blend-mode:normal,multiply}}
+.materials{{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:9px}}
+.tape-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}}
+.swatch{{display:grid;gap:6px;font-size:13px}}
+.swatch i{{display:block;height:24px;background:var(--tape-background);background-blend-mode:normal,multiply,normal;clip-path:var(--tape-edge)}}
+.corner-sample{{height:100px;position:relative;max-width:320px;padding:16px;background:var(--journal-fiber) 0 0 / 230px,#fffbf0}}
+nav{{margin-top:15px;display:flex;flex-wrap:wrap;gap:8px 16px}}
 .reference-grid{{grid-template-columns:repeat(auto-fit,minmax(95px,1fr))}}
 .reference-grid article{{padding:8px 2px;text-align:center}}
 .reference-grid h3{{font-size:12px}}
@@ -99,15 +145,25 @@ background-size:{reference['columns'] * 70}px {reference['rows'] * 70}px;backgro
 </style>
 <main>
 <header><img src="{dog}" alt="" width="51" height="51"><h1>小日子 · 手账素材库</h1></header>
-<p>每周按本机记录选择一张拼贴和一个小图案。<br><a href="little-days-h5-journal.html#diary">看日记里的使用效果</a></p>
-<h2>胶带拼贴</h2><div class="grid">{asset_tiles('collage')}</div>
-<h2>手绘小图案</h2><div class="grid">{asset_tiles('doodle')}</div>
-<h2>纸张、胶带与徽章</h2>
-<div class="materials"><span class="yellow">鹅黄点纹</span><span class="lilac">淡紫格纹</span><span class="orange">暖橙斜纹</span>托斯卡纳灰泥与手工纸</div>
-<div class="grid" style="margin-top:13px">{badge_tiles}</div>
-<h2>参考图全套 · {len(reference['icons'])} 个</h2>
-<p>按原图顺序收录，可逐个查看。日记的每周轮换使用上方原创素材。</p>
+<p>每周按本机记录选拼贴与小图，再换一组标题胶带。</p>
+<nav aria-label="素材分类"><a href="#drawings">手绘小图</a><a href="#tapes">胶带</a><a href="#collages">拼贴</a><a href="#reference">53 张参考</a><a href="little-days-h5-journal.html#diary">打开日记</a></nav>
+{drawing_grids}
+<section id="tapes">
+<h2>手账胶带 · {len(tape_specs)} 卷</h2>
+<div class="tape-grid">{tape_tiles}</div>
+<h2>固定角贴</h2>
+<div class="corner-sample">绿格在后，砖红格在前<span class="corner-tape corner-tape-bottom" aria-hidden="true"><i></i><i></i></span></div>
+</section>
+<section id="collages">
+<h2>原创拼贴 · 4 张</h2><div class="grid">{asset_tiles('collage')}</div>
+<h2>分支拼贴 · 36 张</h2><p>摄影与拼贴同页的 10 张已单独裁出拼贴。</p><div class="grid">{asset_tiles('collage', 'photos')}</div>
+</section>
+<section id="reference">
+<h2>参考小图 · {len(reference['icons'])} 张</h2>
+<p>按原图顺序逐张收录。</p>
 <div class="grid reference-grid">{reference_tiles}</div>
+</section>
+<h2>纸质徽章</h2><div class="grid">{badge_tiles}</div>
 </main></html>"""
 (ROOT / 'gallery.html').write_text(gallery)
 (ROOT / 'dist/gallery.html').write_text(gallery.replace('href="little-days-h5-journal.html#diary"', 'href="index.html#diary"'))

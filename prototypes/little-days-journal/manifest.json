@@ -1,7 +1,7 @@
 {
-  "version": 2,
-  "style": "C 托斯卡纳灰泥底色 / 彩色纸胶带 / B 纸质圆章",
-  "rotation": "one collage + one doodle per browser-local Monday-based week",
+  "version": 3,
+  "style": "C 托斯卡纳灰泥 / 每周标题胶带 / 固定红绿格纹角贴 / B 纸质圆章",
+  "rotation": "One collage, one doodle and one title tape pair per browser-local Monday-based week; corner tape colors are fixed.",
   "assets": [
     {
       "id": "tea-pause",
@@ -68,7 +68,8 @@
       "path": "assets/doodles/sun-friend.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 2
+      "version": 2,
+      "group": "girl"
     },
     {
       "id": "little-reader",
@@ -81,7 +82,8 @@
       "path": "assets/doodles/little-reader.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 2
+      "version": 2,
+      "group": "girl"
     },
     {
       "id": "tea-friend",
@@ -94,7 +96,8 @@
       "path": "assets/doodles/watering-sprout.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 2
+      "version": 2,
+      "group": "girl"
     },
     {
       "id": "gentle-stretch",
@@ -107,7 +110,8 @@
       "path": "assets/doodles/laundry-stretch.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 2
+      "version": 2,
+      "group": "girl"
     },
     {
       "id": "little-walker",
@@ -120,7 +124,8 @@
       "path": "assets/doodles/little-walker.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 2
+      "version": 2,
+      "group": "girl"
     },
     {
       "id": "resting-head",
@@ -133,20 +138,22 @@
       "path": "assets/doodles/resting-head.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 2
+      "version": 2,
+      "group": "girl"
     },
     {
       "id": "small-bloom",
-      "label": "一朵小花",
+      "label": "风里的小花",
       "kind": "doodle",
       "contexts": [
         "outdoors",
         "neutral"
       ],
-      "path": "assets/doodles/small-bloom.svg",
+      "path": "assets/doodles/replace-1.webp",
       "enabled": true,
-      "origin": "original-svg",
-      "version": 1
+      "origin": "generated",
+      "version": 2,
+      "group": "replace"
     },
     {
       "id": "bird-branch",
@@ -156,10 +163,11 @@
         "outdoors",
         "neutral"
       ],
-      "path": "assets/doodles/bird-branch.svg",
+      "path": "assets/doodles/replace-2.webp",
       "enabled": true,
-      "origin": "original-svg",
-      "version": 1
+      "origin": "generated",
+      "version": 2,
+      "group": "replace"
     },
     {
       "id": "moon-cloud",
@@ -169,22 +177,872 @@
         "rest",
         "neutral"
       ],
-      "path": "assets/doodles/moon-cloud.svg",
+      "path": "assets/doodles/replace-3.webp",
       "enabled": true,
-      "origin": "original-svg",
-      "version": 1
+      "origin": "generated",
+      "version": 2,
+      "group": "replace"
     },
     {
       "id": "book-spark",
-      "label": "书里的一点光",
+      "label": "口袋本与星光",
       "kind": "doodle",
       "contexts": [
         "learning",
         "neutral"
       ],
-      "path": "assets/doodles/book-spark.svg",
+      "path": "assets/doodles/replace-4.webp",
       "enabled": true,
-      "origin": "original-svg",
+      "origin": "generated",
+      "version": 2,
+      "group": "replace"
+    },
+    {
+      "id": "photo-collage-01",
+      "label": "无花果蛋糕",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "rest"
+      ],
+      "path": "assets/collages/photos/01.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-02",
+      "label": "鸟居",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/02.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-03",
+      "label": "雪中小屋",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/03.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-04",
+      "label": "旧电脑",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "rest",
+        "learning"
+      ],
+      "path": "assets/collages/photos/04.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-05",
+      "label": "格布上的橘猫",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/05.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-06",
+      "label": "大象滑梯",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/06.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-07",
+      "label": "春日花枝",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors",
+        "learning"
+      ],
+      "path": "assets/collages/photos/07.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-08",
+      "label": "城市晚霞",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors",
+        "learning"
+      ],
+      "path": "assets/collages/photos/08.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-09",
+      "label": "旋转木马",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/09.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-10",
+      "label": "草莓杯",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "rest"
+      ],
+      "path": "assets/collages/photos/10.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-11",
+      "label": "纸袋可颂",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "rest"
+      ],
+      "path": "assets/collages/photos/11.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-12",
+      "label": "睡莲",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/12.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-13",
+      "label": "雏菊",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/13.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-14",
+      "label": "红丝绒蛋糕",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "rest"
+      ],
+      "path": "assets/collages/photos/14.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-15",
+      "label": "小鸟与笼子",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/15.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-16",
+      "label": "苹果派",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "rest"
+      ],
+      "path": "assets/collages/photos/16.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-17",
+      "label": "栗子甜点",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "rest"
+      ],
+      "path": "assets/collages/photos/17.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-18",
+      "label": "蓝窗与椅子",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/18.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-19",
+      "label": "田边红屋",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/19.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-20",
+      "label": "两杯汽水",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "rest"
+      ],
+      "path": "assets/collages/photos/20.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-21",
+      "label": "信封里的花",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors",
+        "learning"
+      ],
+      "path": "assets/collages/photos/21.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-22",
+      "label": "无花果与葡萄",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "rest"
+      ],
+      "path": "assets/collages/photos/22.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-23",
+      "label": "窗边小盆栽",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors",
+        "learning"
+      ],
+      "path": "assets/collages/photos/23.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-24",
+      "label": "树影",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/24.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-25",
+      "label": "凌霄花",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/25.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-26",
+      "label": "池塘",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/26.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-27",
+      "label": "蓝色窗台",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors",
+        "learning"
+      ],
+      "path": "assets/collages/photos/27.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-28",
+      "label": "柠檬挞",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "rest"
+      ],
+      "path": "assets/collages/photos/28.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-29",
+      "label": "石蒜",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/29.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-30",
+      "label": "草莓卷",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "rest"
+      ],
+      "path": "assets/collages/photos/30.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-31",
+      "label": "空泳池",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/31.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-32",
+      "label": "蓝房子",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors",
+        "learning"
+      ],
+      "path": "assets/collages/photos/32.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-33",
+      "label": "抹茶芭菲",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "rest"
+      ],
+      "path": "assets/collages/photos/33.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-34",
+      "label": "城市里的鱼",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors",
+        "learning"
+      ],
+      "path": "assets/collages/photos/34.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-35",
+      "label": "绣球花",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/35.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "photo-collage-36",
+      "label": "海浪",
+      "kind": "collage",
+      "group": "photos",
+      "contexts": [
+        "neutral",
+        "outdoors"
+      ],
+      "path": "assets/collages/photos/36.webp",
+      "enabled": true,
+      "origin": "feature/photos",
+      "version": 1
+    },
+    {
+      "id": "cloud-1",
+      "label": "放风筝",
+      "kind": "doodle",
+      "group": "cloud",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/cloud-1.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "cloud-2",
+      "label": "坐着补袜子",
+      "kind": "doodle",
+      "group": "cloud",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/cloud-2.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "cloud-3",
+      "label": "骑车兜风",
+      "kind": "doodle",
+      "group": "cloud",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/cloud-3.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "cloud-4",
+      "label": "分一副耳机",
+      "kind": "doodle",
+      "group": "cloud",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/cloud-4.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "cloud-5",
+      "label": "揉面团",
+      "kind": "doodle",
+      "group": "cloud",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/cloud-5.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "cloud-6",
+      "label": "踩水洼",
+      "kind": "doodle",
+      "group": "cloud",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/cloud-6.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "objects-1",
+      "label": "双耳茶壶",
+      "kind": "doodle",
+      "group": "objects",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/objects-1.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "objects-2",
+      "label": "台灯和便签",
+      "kind": "doodle",
+      "group": "objects",
+      "contexts": [
+        "learning",
+        "neutral"
+      ],
+      "path": "assets/doodles/objects-2.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "objects-3",
+      "label": "雨靴",
+      "kind": "doodle",
+      "group": "objects",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/objects-3.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "objects-4",
+      "label": "帆布袋",
+      "kind": "doodle",
+      "group": "objects",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/objects-4.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "objects-5",
+      "label": "小闹钟",
+      "kind": "doodle",
+      "group": "objects",
+      "contexts": [
+        "learning",
+        "neutral"
+      ],
+      "path": "assets/doodles/objects-5.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "objects-6",
+      "label": "垂叶盆栽",
+      "kind": "doodle",
+      "group": "objects",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/objects-6.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "animals-1",
+      "label": "捂鼻子睡的小猫",
+      "kind": "doodle",
+      "group": "animals",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/animals-1.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "animals-2",
+      "label": "看落叶的小狗",
+      "kind": "doodle",
+      "group": "animals",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/animals-2.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "animals-3",
+      "label": "晾衣绳上的麻雀",
+      "kind": "doodle",
+      "group": "animals",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/animals-3.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "animals-4",
+      "label": "闻花的兔子",
+      "kind": "doodle",
+      "group": "animals",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/animals-4.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "animals-5",
+      "label": "带落叶的小刺猬",
+      "kind": "doodle",
+      "group": "animals",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/animals-5.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "animals-6",
+      "label": "回头的小鸭",
+      "kind": "doodle",
+      "group": "animals",
+      "contexts": [
+        "outdoors",
+        "neutral"
+      ],
+      "path": "assets/doodles/animals-6.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "food-1",
+      "label": "焦糖布丁",
+      "kind": "doodle",
+      "group": "food",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/food-1.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "food-2",
+      "label": "蒸包子",
+      "kind": "doodle",
+      "group": "food",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/food-2.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "food-3",
+      "label": "珍珠奶茶",
+      "kind": "doodle",
+      "group": "food",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/food-3.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "food-4",
+      "label": "三角饭团",
+      "kind": "doodle",
+      "group": "food",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/food-4.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "food-5",
+      "label": "筷子挑面的面碗",
+      "kind": "doodle",
+      "group": "food",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/food-5.webp",
+      "enabled": true,
+      "origin": "generated",
+      "version": 1
+    },
+    {
+      "id": "food-6",
+      "label": "两瓣橙子",
+      "kind": "doodle",
+      "group": "food",
+      "contexts": [
+        "rest",
+        "neutral"
+      ],
+      "path": "assets/doodles/food-6.webp",
+      "enabled": true,
+      "origin": "generated",
       "version": 1
     }
   ]

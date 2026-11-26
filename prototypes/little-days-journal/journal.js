@@ -1,7 +1,7 @@
 /* Build inserts a small registry with inline asset URIs before this file. */
 const JournalDecor=(function(){
   const library=JOURNAL_LIBRARY;
-  const paletteVersion='journal-c-c-b-2';
+  const paletteVersion='journal-c-c-b-3';
   const allowed=note=>note.include_in_review!==false&&!note.revoked&&!note.revokedAt;
   function records(range){
     return [...(state.snippets||[]),...(state.diary||[])].filter(n=>range.includes(n.date)&&allowed(n));
@@ -17,6 +17,26 @@ const JournalDecor=(function(){
     scores.sort((a,b)=>b[1]-a[1]);return scores[0][1]?scores[0][0]:'neutral';
   }
   function weekNumber(monday){return Math.floor(Date.parse(monday+'T12:00:00Z')/604800000);}
+  function tapePairFor(day){
+    const first=library.tapes.pairs.findIndex(pair=>pair[0]===library.tapes.firstPair);
+    const offset=weekNumber(weekDays(day)[0])-weekNumber(library.tapes.firstWeek);
+    const count=library.tapes.pairs.length;
+    return library.tapes.pairs[((first+offset)%count+count)%count];
+  }
+  function addCorner(card,position){
+    if(!card||card.querySelector('.corner-tape'))return;
+    const tape=document.createElement('span');
+    tape.className='corner-tape corner-tape-'+position;
+    tape.setAttribute('aria-hidden','true');
+    tape.append(document.createElement('i'),document.createElement('i'));
+    card.append(tape);
+  }
+  function stampTitle(title,tape,second=false){
+    if(!title)return;
+    title.classList.add('tape-title');
+    title.classList.toggle('tape-second',second);
+    title.dataset.tape=tape;
+  }
   function pick(kind,category,week,previousID){
     const all=library.assets.filter(a=>a.kind===kind&&a.enabled!==false);
     let pool=all.filter(a=>a.contexts.includes(category));if(pool.length<2)pool=all;
@@ -108,8 +128,11 @@ const JournalDecor=(function(){
     if(page==='diary'&&view==='week'){
       const day=/^\d{4}-\d{2}-\d{2}$/.test(anchor||'')?anchor:localDate(new Date());
       const cards=main.querySelectorAll('.review-card');
-      const tapes=['tape-yellow','tape-lilac','tape-orange'];
-      cards.forEach((card,i)=>card.querySelector('h2')?.classList.add('tape-title',tapes[i]));
+      const [first,second]=tapePairFor(day);
+      stampTitle(cards[0]?.querySelector('h2'),first);
+      stampTitle(cards[2]?.querySelector('h2'),second,true);
+      cards[1]?.classList.add('journal-self-time');
+      addCorner(cards[1],'bottom');
       main.querySelectorAll('.pw-head .badge').forEach(el=>el.remove());
       main.querySelectorAll('.bar-col').forEach(col=>{
         if(col.querySelector('strong')?.textContent==='0')col.setAttribute('data-empty','');
@@ -117,14 +140,19 @@ const JournalDecor=(function(){
       decorateSupport(cards[1],day);
       cards[2]?.append(vignette(day,'week'));
     }else if(page==='diary'){
+      const day=localDate(new Date()),[first,second]=tapePairFor(day);
       const recap=main.querySelector('.recap-card');
-      recap?.querySelector('h2')?.classList.add('tape-title','tape-yellow');
-      main.querySelector('.diary-entry:not(.recap-card) h2')?.classList.add('tape-title','tape-lilac');
-      recap?.append(vignette(localDate(new Date()),'today'));
+      const feelings=main.querySelector('.diary-entry:not(.recap-card)');
+      stampTitle(recap?.querySelector('h2'),first);
+      feelings?.classList.add('journal-feelings');
+      addCorner(feelings,'top');
+      recap?.append(vignette(day,'today'));
       decoratePlan();
+      const planChat=main.querySelector('.journal-plan-chat');
+      if(planChat)planChat.dataset.tape=second;
     }
   }
-  return {enhance,planFor,contextFor,support,pick,weekNumber,badge};
+  return {enhance,planFor,contextFor,support,pick,weekNumber,tapePairFor,badge};
 })();
 
 // Retain the uploaded v9 functions, routes and forms. Apply bounded decoration after render.
