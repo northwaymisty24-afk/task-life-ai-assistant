@@ -2,7 +2,7 @@
 
 This page gives new team members the minimum context needed before opening the full Word specification.
 
-**Scope update (2026-11-26):** [MVP SPEC v1.1 for the December 20 deliverable](MVP_SPEC_v1.1_2026-12-20.md) and the [A-side handoff and current status](A-frontend-handoff-2026-11-26.md). The Word v1.0 file remains the earlier engineering baseline; its F6–F9 deferral does not waive the three required features for December 20. The v1.1 amendment is proposed for team contract and schema review; the offline prototype is not an integrated release.
+**Scope update (2026-11-26):** [MVP SPEC v1.1 for the December 10 completion and December 20 roadshow](MVP_SPEC_v1.1_2026-12-10.md) and the [A-side handoff and current status](A-frontend-handoff-2026-11-26.md). The Word v1.0 file remains the earlier engineering baseline; its F6–F9 deferral does not waive the three required features for the December 10 completion. The v1.1 amendment is proposed for team contract and schema review; the offline prototype is not an integrated release.
 
 ## What the specification is
 
@@ -47,7 +47,7 @@ The target architecture separates A, B, and C responsibilities. The current repo
 
 ## Read next
 
-1. [December 20 scope amendment, v1.1](MVP_SPEC_v1.1_2026-12-20.md)
+1. [December 20 scope amendment, v1.1](MVP_SPEC_v1.1_2026-12-10.md)
 2. [A-side progress and handoff](A-frontend-handoff-2026-11-26.md)
 3. [Original technical specification, v1.0](MVP_SPEC_v1.0.docx)
 4. [Open product questions](open-questions.md)
