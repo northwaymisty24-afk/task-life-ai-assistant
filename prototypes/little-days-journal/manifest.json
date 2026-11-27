@@ -1815,7 +1815,7 @@
     },
     {
       "id": "pets-six-1",
-      "label": "这道题怎么做",
+      "label": "小狗学习 1+1=2，小猫歪头不解",
       "kind": "doodle",
       "group": "pets",
       "activity": true,
@@ -1826,7 +1826,7 @@
         "learning"
       ],
       "enabled": true,
-      "version": 5,
+      "version": 6,
       "path": "assets/doodles/pets-six-1.webp",
       "background": "transparent",
       "origin": "AI background extraction; original scene approved"

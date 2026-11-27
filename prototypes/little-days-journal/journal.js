@@ -164,7 +164,15 @@ const JournalDecor=(function(){
       stampTitle(recap?.querySelector('h2'),first);
       feelings?.classList.add('journal-feelings');
       addCorner(feelings,'top');
-      if(feelings){feelings.querySelector('.feelings-activity')?.remove();feelings.append(assetArt(library.assets.find(a=>a.id===planFor(day).feelings),'journal-activity feelings-activity'));}
+      if(feelings){
+        feelings.querySelector('.feelings-art-row')?.remove();
+        const row=document.createElement('div');row.className='feelings-art-row';
+        row.append(assetArt(library.assets.find(a=>a.id===planFor(day).feelings),'journal-activity feelings-activity'));
+        const steps=feelings.querySelector('.diary-steps');
+        const label=steps?.querySelector('label[for="diary-text"]');
+        if(label){Array.from(label.childNodes).filter(n=>n.nodeType===3).forEach(n=>n.remove());label.querySelector('textarea')?.setAttribute('aria-label','此刻的感受');}
+        if(steps)steps.before(row);
+      }
       recap?.append(vignette(day,'today'));
       decoratePlan();
       const planChat=main.querySelector('.journal-plan-chat');

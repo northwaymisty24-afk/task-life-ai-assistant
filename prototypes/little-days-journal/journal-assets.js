@@ -3,6 +3,7 @@ const JournalAssets=(()=>{
   function element(a,className=''){
     if(!a)return document.createElement('span');
     const box=document.createElement('span');box.className='journal-art '+className;box.dataset.assetId=a.id;box.setAttribute('aria-hidden','true');box.title=a.label||'';
+    if(a.group==='pets')box.classList.add('journal-pet-art');
     const img=document.createElement('img');img.alt='';img.draggable=false;img.decoding='async';
     if(a.sheet){
       const sheet=lib.sheets[a.sheet],[x,y,w,h]=a.crop;
