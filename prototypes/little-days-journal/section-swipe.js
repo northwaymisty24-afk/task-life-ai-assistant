@@ -28,12 +28,12 @@ const SectionPages=(()=>{
       location.hash=next;
       requestAnimationFrame(()=>requestAnimationFrame(()=>{
         clear();
-        if(!reduce()&&main.animate){animation=main.animate([{transform:`translateX(${-dir*45}px)`,opacity:.45},{transform:'translateX(0)',opacity:1}],{duration:210,easing:'cubic-bezier(.2,.7,.2,1)'});animation.finished.catch(()=>{}).finally(()=>{moving=false;animation=null;});}else moving=false;
+        if(!reduce()&&main.animate){animation=main.animate([{transform:`translate3d(${-dir*32}px,0,0)`,opacity:.55},{transform:'translate3d(0,0,0)',opacity:1}],{duration:190,easing:'cubic-bezier(.22,.7,.25,1)'});animation.finished.catch(()=>{}).finally(()=>{moving=false;animation=null;});}else moving=false;
       }));
     };
     if(reduce()||!main.animate){clear();enter();return;}
     const from=main.style.transform||'translateX(0)';clear();
-    animation=main.animate([{transform:from,opacity:1},{transform:`translateX(${dir*65}px)`,opacity:.35}],{duration:140,easing:'ease-in',fill:'forwards'});
+    animation=main.animate([{transform:from,opacity:1},{transform:`translate3d(${dir*48}px,0,0)`,opacity:.45}],{duration:120,easing:'ease-in',fill:'forwards'});
     animation.finished.then(()=>{animation.cancel();animation=null;enter();}).catch(()=>{moving=false;clear();});
   }
   main.addEventListener('pointerdown',e=>{
@@ -46,18 +46,24 @@ const SectionPages=(()=>{
   main.addEventListener('pointermove',e=>{
     if(!gesture||e.pointerId!==gesture.id)return;
     const dx=e.clientX-gesture.x,dy=e.clientY-gesture.y;
-    if(!gesture.locked){if(Math.abs(dy)>14&&Math.abs(dy)>Math.abs(dx)){gesture=null;return;}if(Math.abs(dx)<18||Math.abs(dx)<Math.abs(dy)*1.6)return;gesture.locked=true;main.setPointerCapture(e.pointerId);main.style.willChange='transform';}
+    if(!gesture.locked){if(Math.abs(dy)>12&&Math.abs(dy)>Math.abs(dx)){gesture=null;return;}if(Math.abs(dx)<12||Math.abs(dx)<Math.abs(dy)*1.35)return;gesture.locked=true;main.setPointerCapture(e.pointerId);main.style.willChange='transform';}
     gesture.dx=dx;const index=routes.indexOf(current()),allowed=dx<0?index<routes.length-1:index>0;
-    main.style.transform=`translateX(${Math.max(-innerWidth*.4,Math.min(innerWidth*.4,dx))*(allowed?.65:.15)}px)`;
+    main.style.transform=`translate3d(${Math.max(-innerWidth*.4,Math.min(innerWidth*.4,dx))*(allowed?.72:.12)}px,0,0)`;
   });
   function finish(e){
     if(!gesture||e.pointerId!==gesture.id)return;
     const {dx,locked}=gesture;gesture=null;
     if(main.hasPointerCapture(e.pointerId))main.releasePointerCapture(e.pointerId);
-    if(e.type==='pointerup'&&locked&&Math.abs(dx)>Math.max(65,Math.min(110,innerWidth*.18))){go(dx<0?1:-1);}
+    if(e.type==='pointerup'&&locked&&Math.abs(dx)>Math.max(42,Math.min(72,innerWidth*.13))){go(dx<0?1:-1);}
     else{main.style.transition=reduce()?'':'transform .18s ease';main.style.transform='';setTimeout(clear,190);}
   }
   main.addEventListener('pointerup',finish);main.addEventListener('pointercancel',finish);
+  main.addEventListener('click',e=>{
+    if(moving||gesture||document.querySelector('dialog[open]'))return;
+    if(e.target.closest('input,textarea,select,button,a,summary,.ins,.drag-handle,.sortable-list,.wk-grid,.cal-grid,[contenteditable]'))return;
+    const edge=innerWidth*.18;
+    if(e.clientX<edge)go(-1);else if(e.clientX>innerWidth-edge)go(1);
+  });
   addEventListener('hashchange',()=>{if(!moving)clear();});
   render();return {go,capture};
 })();
