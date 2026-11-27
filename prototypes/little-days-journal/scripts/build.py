@@ -5,11 +5,17 @@ import html
 import json
 import mimetypes
 import re
+import runpy
+import sys
+import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
+EXTERNAL = '--external' in sys.argv
 
 
 def data(path):
+    if EXTERNAL:
+        return path.relative_to(ROOT).as_posix()
     mime = mimetypes.guess_type(path.name)[0] or 'application/octet-stream'
     return f'data:{mime};base64,' + base64.b64encode(path.read_bytes()).decode()
 
@@ -30,6 +36,8 @@ if (
     raise ValueError('Each title tape must belong to exactly one weekly pair.')
 registry = {
     'assets': assets, 'badges': badges,
+    'sheets': {},
+    'habitBadges': [{**a,'src':data(ROOT / a['path'])} for a in manifest.get('habitBadges',[])],
     'tapes': {key: tape_catalog[key] for key in ('firstWeek', 'firstPair', 'pairs')},
 }
 tape_css = '\n'.join(
@@ -75,9 +83,10 @@ if source.count('const icons = {') != 1 or source.count('icon("hand")') != 1:
 source = source.replace('const icons = {', 'const icons = {"paw": ' + json.dumps(paw) + ',', 1)
 source = source.replace('icon("hand")', 'icon("paw")', 1)
 source = source.replace('右边的小手', '右边的狗爪')
+source = runpy.run_path(str(ROOT / 'scripts/upgrade-source.py'))['upgrade'](source)
 journal_css = (ROOT / 'journal.css').read_text()
-style = '\n'.join((variables, tape_css, journal_css))
-code = 'const JOURNAL_LIBRARY=' + json.dumps(registry, ensure_ascii=False) + ';\n' + (ROOT / 'journal.js').read_text()
+style = '\n'.join((variables, tape_css, journal_css, (ROOT / 'enhancements.css').read_text()))
+code = 'const JOURNAL_LIBRARY=' + json.dumps(registry, ensure_ascii=False) + ';\n' + (ROOT / 'journal-assets.js').read_text() + '\n' + (ROOT / 'journal.js').read_text() + '\n' + (ROOT / 'section-swipe.js').read_text()
 result = source.replace('</style>', style + '\n</style>', 1).replace('</body>', '<script>\n' + code + '\n</script>\n</body>')
 (ROOT / 'dist').mkdir(exist_ok=True)
 for name in ('dist/index.html', 'little-days-h5-journal.html'):
@@ -101,7 +110,7 @@ drawing_grids = ''.join(
     section(title, asset_tiles('doodle', group), 'drawings' if group == 'girl' else '')
     for group, title in (
         ('girl', '活动人物 · 小女孩'), ('cloud', '活动人物 · 云朵头'),
-        ('objects', '日常物件'), ('animals', '动物'), ('food', '美食'), ('replace', '重画的四枚小图'),
+        ('pets', '活动场景 · 小猫和小狗'), ('objects', '日常物件'), ('animals', '动物'), ('food', '美食'), ('replace', '重画的四枚小图'),
     )
 )
 tape_tiles = ''.join(
@@ -119,7 +128,7 @@ badge_tiles = ''.join(
     f'<article><div class="badge-view"><img src="{badges[key]}" alt="" width="84" height="84">'
     f'<img src="{badges[key]}" alt="" width="26" height="26"></div><h3>{label}</h3><p>{description}</p></article>'
     for key, label, description in (
-        ('crown', '小皇冠', '只留中间一颗红点'), ('rose', '细长玫瑰', '纸质圆章')
+        ('crown', '小皇冠', '只留中间一颗红点'), ('rose', '饱满玫瑰', '纸质圆章')
     )
 )
 reference_dir = ROOT / 'assets/reference'
@@ -132,6 +141,7 @@ reference_tiles = ''.join(
     for item in reference['icons']
 )
 
+habit_tiles=''.join(f'<article><img src="{data(ROOT / a["path"])}" alt=""><h3>{html.escape(a["label"])}</h3></article>' for a in manifest.get('habitBadges',[]))
 gallery = f"""<!doctype html>
 <html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>小日子 · 手账素材库</title>
@@ -181,6 +191,7 @@ background-size:{reference['columns'] * 70}px {reference['rows'] * 70}px;backgro
 <section id="collages">
 <h2>原创拼贴 · 4 张</h2><div class="grid">{asset_tiles('collage')}</div>
 <h2>分支拼贴 · 36 张</h2><p>摄影与拼贴同页的 10 张已单独裁出拼贴。</p><div class="grid">{asset_tiles('collage', 'photos')}</div>
+<h2>新增透明拼贴 · 3 张</h2><div class="grid">{asset_tiles('collage', 'paper-animals')}</div>
 </section>
 <section id="reference">
 <h2>参考小图 · {len(reference['icons'])} 张</h2>
@@ -188,7 +199,12 @@ background-size:{reference['columns'] * 70}px {reference['rows'] * 70}px;backgro
 <div class="grid reference-grid">{reference_tiles}</div>
 </section>
 <h2>纸质徽章</h2><div class="grid">{badge_tiles}</div>
+<h2>习惯徽章 · 30 枚</h2><div class="grid">{habit_tiles}</div>
 </main></html>"""
 (ROOT / 'gallery.html').write_text(gallery)
 (ROOT / 'dist/gallery.html').write_text(gallery.replace('href="little-days-h5-journal.html#diary"', 'href="index.html#diary"'))
 print(f'Built {len(assets)} rotating assets, {len(reference["icons"])} reference doodles and 2 badges. Offline app {len(result.encode()):,} bytes.')
+
+
+if EXTERNAL:
+    shutil.copytree(ROOT / 'assets', ROOT / 'dist/assets', dirs_exist_ok=True)

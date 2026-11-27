@@ -69,7 +69,8 @@
       "enabled": true,
       "origin": "generated",
       "version": 2,
-      "group": "girl"
+      "group": "girl",
+      "activity": true
     },
     {
       "id": "little-reader",
@@ -83,7 +84,8 @@
       "enabled": true,
       "origin": "generated",
       "version": 2,
-      "group": "girl"
+      "group": "girl",
+      "activity": true
     },
     {
       "id": "tea-friend",
@@ -97,7 +99,8 @@
       "enabled": true,
       "origin": "generated",
       "version": 2,
-      "group": "girl"
+      "group": "girl",
+      "activity": true
     },
     {
       "id": "gentle-stretch",
@@ -111,7 +114,8 @@
       "enabled": true,
       "origin": "generated",
       "version": 2,
-      "group": "girl"
+      "group": "girl",
+      "activity": true
     },
     {
       "id": "little-walker",
@@ -125,7 +129,8 @@
       "enabled": true,
       "origin": "generated",
       "version": 2,
-      "group": "girl"
+      "group": "girl",
+      "activity": true
     },
     {
       "id": "resting-head",
@@ -139,7 +144,8 @@
       "enabled": true,
       "origin": "generated",
       "version": 2,
-      "group": "girl"
+      "group": "girl",
+      "activity": true
     },
     {
       "id": "small-bloom",
@@ -757,7 +763,8 @@
       "path": "assets/doodles/cloud-1.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 2
+      "version": 2,
+      "activity": true
     },
     {
       "id": "cloud-2",
@@ -771,7 +778,8 @@
       "path": "assets/doodles/cloud-2.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 2
+      "version": 2,
+      "activity": true
     },
     {
       "id": "cloud-3",
@@ -785,7 +793,8 @@
       "path": "assets/doodles/cloud-3.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 2
+      "version": 2,
+      "activity": true
     },
     {
       "id": "cloud-4",
@@ -799,7 +808,8 @@
       "path": "assets/doodles/cloud-4.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 2
+      "version": 2,
+      "activity": true
     },
     {
       "id": "cloud-5",
@@ -813,7 +823,8 @@
       "path": "assets/doodles/cloud-5.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 2
+      "version": 2,
+      "activity": true
     },
     {
       "id": "cloud-6",
@@ -827,7 +838,8 @@
       "path": "assets/doodles/cloud-6.webp",
       "enabled": true,
       "origin": "generated",
-      "version": 2
+      "version": 2,
+      "activity": true
     },
     {
       "id": "objects-1",
@@ -1080,6 +1092,1151 @@
       "enabled": true,
       "origin": "generated",
       "version": 1
+    },
+    {
+      "id": "cloud-new-1",
+      "label": "遛狗",
+      "kind": "doodle",
+      "group": "cloud",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/cloud-new-1.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "cloud-new-2",
+      "label": "和猫玩",
+      "kind": "doodle",
+      "group": "cloud",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/cloud-new-2.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "cloud-new-3",
+      "label": "树下发呆",
+      "kind": "doodle",
+      "group": "cloud",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/cloud-new-3.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "cloud-new-4",
+      "label": "边走边吃苹果",
+      "kind": "doodle",
+      "group": "cloud",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/cloud-new-4.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "cloud-new-5",
+      "label": "用电脑时犯困",
+      "kind": "doodle",
+      "group": "cloud",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/cloud-new-5.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "cloud-new-6",
+      "label": "钻进被窝",
+      "kind": "doodle",
+      "group": "cloud",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/cloud-new-6.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "cloud-new-7",
+      "label": "荡秋千",
+      "kind": "doodle",
+      "group": "cloud",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/cloud-new-7.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "cloud-new-8",
+      "label": "追蝴蝶",
+      "kind": "doodle",
+      "group": "cloud",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/cloud-new-8.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "cloud-new-9",
+      "label": "给花园浇水",
+      "kind": "doodle",
+      "group": "cloud",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/cloud-new-9.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-new-1",
+      "label": "和朋友逛街",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-new-1.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-new-2",
+      "label": "玩滑梯",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-new-2.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-new-3",
+      "label": "玩跷跷板",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-new-3.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-new-4",
+      "label": "沙发上吃薯片",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-new-4.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-new-5",
+      "label": "划船",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-new-5.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-new-6",
+      "label": "泡茶",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-new-6.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-new-7",
+      "label": "试新裙子",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-new-7.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-new-8",
+      "label": "做瑜伽",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-new-8.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-new-9",
+      "label": "举哑铃",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-new-9.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-together-1",
+      "label": "差一点亲到",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-together-1.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-together-2",
+      "label": "一起逛超市",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-together-2.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-together-3",
+      "label": "一起玩游戏",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-together-3.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-together-4",
+      "label": "小圆桌吃饭",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-together-4.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-together-5",
+      "label": "一起坐高铁",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-together-5.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-together-6",
+      "label": "草坪上吹风",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-together-6.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-together-7",
+      "label": "帮我拍照",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-together-7.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-together-8",
+      "label": "和朋友数星星",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-together-8.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-together-9",
+      "label": "和朋友跳格子",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-together-9.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-adventure-1",
+      "label": "凉床上扇扇子",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-adventure-1.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-adventure-2",
+      "label": "坐热气球",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-adventure-2.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-adventure-3",
+      "label": "跳伞",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-adventure-3.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-adventure-4",
+      "label": "潜水",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/girl-adventure-4.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-nine-1",
+      "label": "让我看看你",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-nine-1.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-nine-2",
+      "label": "一起玩嘛",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-nine-2.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-nine-3",
+      "label": "先别动",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-nine-3.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-nine-4",
+      "label": "拉你去兜风",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-nine-4.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-nine-5",
+      "label": "小心掉下去",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-nine-5.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-nine-6",
+      "label": "马戏团的球",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-nine-6.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-nine-7",
+      "label": "好像拿反了",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-nine-7.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-nine-8",
+      "label": "你在上面呀",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-nine-8.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-nine-9",
+      "label": "给你盖被子",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-nine-9.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-six-1",
+      "label": "这道题怎么做",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-six-1.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-six-2",
+      "label": "送你一份礼物",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-six-2.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-six-3",
+      "label": "帮你舔舔毛",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-six-3.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-six-4",
+      "label": "冰箱里有什么",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-six-4.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-six-5",
+      "label": "追着泡泡跑",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-six-5.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "pets-six-6",
+      "label": "一起睡个好觉",
+      "kind": "doodle",
+      "group": "pets",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors",
+        "learning"
+      ],
+      "enabled": true,
+      "version": 5,
+      "path": "assets/doodles/pets-six-6.webp",
+      "background": "transparent",
+      "origin": "AI background extraction; original scene approved"
+    },
+    {
+      "id": "girl-extra-1",
+      "label": "补水喷雾",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors"
+      ],
+      "path": "assets/doodles/girl-extra-1.webp",
+      "background": "transparent",
+      "enabled": true,
+      "version": 5
+    },
+    {
+      "id": "girl-extra-2",
+      "label": "草地上晒背",
+      "kind": "doodle",
+      "group": "girl",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors"
+      ],
+      "path": "assets/doodles/girl-extra-2.webp",
+      "background": "transparent",
+      "enabled": true,
+      "version": 5
+    },
+    {
+      "id": "cloud-extra-3",
+      "label": "沙滩椅喝椰汁",
+      "kind": "doodle",
+      "group": "cloud",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors"
+      ],
+      "path": "assets/doodles/cloud-extra-3.webp",
+      "background": "transparent",
+      "enabled": true,
+      "version": 5
+    },
+    {
+      "id": "cloud-extra-4",
+      "label": "跳舞",
+      "kind": "doodle",
+      "group": "cloud",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors"
+      ],
+      "path": "assets/doodles/cloud-extra-4.webp",
+      "background": "transparent",
+      "enabled": true,
+      "version": 5
+    },
+    {
+      "id": "cloud-extra-5",
+      "label": "烘焙小蛋糕",
+      "kind": "doodle",
+      "group": "cloud",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors"
+      ],
+      "path": "assets/doodles/cloud-extra-5.webp",
+      "background": "transparent",
+      "enabled": true,
+      "version": 5
+    },
+    {
+      "id": "cloud-extra-6",
+      "label": "海边堆沙堡",
+      "kind": "doodle",
+      "group": "cloud",
+      "activity": true,
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors"
+      ],
+      "path": "assets/doodles/cloud-extra-6.webp",
+      "background": "transparent",
+      "enabled": true,
+      "version": 5
+    },
+    {
+      "id": "collage-crows",
+      "label": "三只乌鸦",
+      "kind": "collage",
+      "group": "paper-animals",
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors"
+      ],
+      "enabled": true,
+      "background": "transparent",
+      "path": "assets/collages/collage-crows.webp",
+      "version": 5
+    },
+    {
+      "id": "collage-tabby",
+      "label": "坐着的狸花猫",
+      "kind": "collage",
+      "group": "paper-animals",
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors"
+      ],
+      "enabled": true,
+      "background": "transparent",
+      "path": "assets/collages/collage-tabby.webp",
+      "version": 5
+    },
+    {
+      "id": "collage-tuxedo",
+      "label": "趴着的奶牛猫",
+      "kind": "collage",
+      "group": "paper-animals",
+      "contexts": [
+        "neutral",
+        "rest",
+        "outdoors"
+      ],
+      "enabled": true,
+      "background": "transparent",
+      "path": "assets/collages/collage-tuxedo.webp",
+      "version": 5
+    },
+    {
+      "id": "clock-out",
+      "label": "下班打卡",
+      "kind": "doodle",
+      "group": "objects",
+      "contexts": [
+        "neutral",
+        "rest"
+      ],
+      "enabled": true,
+      "path": "assets/doodles/clock-out.webp"
+    },
+    {
+      "id": "wash-fruit",
+      "label": "洗水果",
+      "kind": "doodle",
+      "group": "food",
+      "contexts": [
+        "neutral",
+        "rest"
+      ],
+      "enabled": true,
+      "path": "assets/doodles/wash-fruit.webp"
+    }
+  ],
+  "habitBadges": [
+    {
+      "id": "habit-1",
+      "label": "喝水",
+      "path": "assets/badges/habits/habit-1.webp"
+    },
+    {
+      "id": "habit-2",
+      "label": "远眺",
+      "path": "assets/badges/habits/habit-2.webp"
+    },
+    {
+      "id": "habit-3",
+      "label": "读书",
+      "path": "assets/badges/habits/habit-3.webp"
+    },
+    {
+      "id": "habit-4",
+      "label": "骑车",
+      "path": "assets/badges/habits/habit-4.webp"
+    },
+    {
+      "id": "habit-5",
+      "label": "健身",
+      "path": "assets/badges/habits/habit-5.webp"
+    },
+    {
+      "id": "habit-6",
+      "label": "跑步",
+      "path": "assets/badges/habits/habit-6.webp"
+    },
+    {
+      "id": "habit-7",
+      "label": "散步",
+      "path": "assets/badges/habits/habit-7.webp"
+    },
+    {
+      "id": "habit-8",
+      "label": "游泳",
+      "path": "assets/badges/habits/habit-8.webp"
+    },
+    {
+      "id": "habit-9",
+      "label": "拉伸",
+      "path": "assets/badges/habits/habit-9.webp"
+    },
+    {
+      "id": "habit-10",
+      "label": "瑜伽",
+      "path": "assets/badges/habits/habit-10.webp"
+    },
+    {
+      "id": "habit-11",
+      "label": "早睡",
+      "path": "assets/badges/habits/habit-11.webp"
+    },
+    {
+      "id": "habit-12",
+      "label": "早起",
+      "path": "assets/badges/habits/habit-12.webp"
+    },
+    {
+      "id": "habit-13",
+      "label": "午休",
+      "path": "assets/badges/habits/habit-13.webp"
+    },
+    {
+      "id": "habit-14",
+      "label": "冥想",
+      "path": "assets/badges/habits/habit-14.webp"
+    },
+    {
+      "id": "habit-15",
+      "label": "深呼吸",
+      "path": "assets/badges/habits/habit-15.webp"
+    },
+    {
+      "id": "habit-16",
+      "label": "晒太阳",
+      "path": "assets/badges/habits/habit-16.webp"
+    },
+    {
+      "id": "habit-17",
+      "label": "吃早餐",
+      "path": "assets/badges/habits/habit-17.webp"
+    },
+    {
+      "id": "habit-18",
+      "label": "吃蔬菜",
+      "path": "assets/badges/habits/habit-18.webp"
+    },
+    {
+      "id": "habit-19",
+      "label": "吃水果",
+      "path": "assets/badges/habits/habit-19.webp"
+    },
+    {
+      "id": "habit-20",
+      "label": "少糖",
+      "path": "assets/badges/habits/habit-20.webp"
+    },
+    {
+      "id": "habit-21",
+      "label": "背单词",
+      "path": "assets/badges/habits/habit-21.webp"
+    },
+    {
+      "id": "habit-22",
+      "label": "写作",
+      "path": "assets/badges/habits/habit-22.webp"
+    },
+    {
+      "id": "habit-23",
+      "label": "练字",
+      "path": "assets/badges/habits/habit-23.webp"
+    },
+    {
+      "id": "habit-24",
+      "label": "学新知",
+      "path": "assets/badges/habits/habit-24.webp"
+    },
+    {
+      "id": "habit-25",
+      "label": "复盘",
+      "path": "assets/badges/habits/habit-25.webp"
+    },
+    {
+      "id": "habit-26",
+      "label": "整理房间",
+      "path": "assets/badges/habits/habit-26.webp"
+    },
+    {
+      "id": "habit-27",
+      "label": "记录心情",
+      "path": "assets/badges/habits/habit-27.webp"
+    },
+    {
+      "id": "habit-28",
+      "label": "护肤",
+      "path": "assets/badges/habits/habit-28.webp"
+    },
+    {
+      "id": "habit-29",
+      "label": "用牙线",
+      "path": "assets/badges/habits/habit-29.webp"
+    },
+    {
+      "id": "habit-30",
+      "label": "联系朋友",
+      "path": "assets/badges/habits/habit-30.webp"
     }
   ]
 }

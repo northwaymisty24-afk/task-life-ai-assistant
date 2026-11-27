@@ -1,7 +1,6 @@
-/* Build inserts a small registry with inline asset URIs before this file. */
 const JournalDecor=(function(){
   const library=JOURNAL_LIBRARY;
-  const paletteVersion='journal-c-c-b-3';
+  const paletteVersion='journal-weekly-transparent-5';
   const allowed=note=>note.include_in_review!==false&&!note.revoked&&!note.revokedAt;
   function records(range){
     return [...(state.snippets||[]),...(state.diary||[])].filter(n=>range.includes(n.date)&&allowed(n));
@@ -44,19 +43,26 @@ const JournalDecor=(function(){
     let item=pool[start];if(item.id===previousID&&pool.length>1)item=pool[(start+1)%pool.length];return item;
   }
   function planFor(anchor){
-    const range=weekDays(anchor),key=range[0];
+    const key=weekDays(anchor)[0];
     state.journalDecorWeeks ||= {};
     const old=state.journalDecorWeeks[key];
     const valid=id=>library.assets.some(a=>a.id===id&&a.enabled!==false);
-    if(old&&valid(old.collage)&&valid(old.doodle))return old;
-    const previous=state.journalDecorWeeks[shiftDay(key,-7)];
-    const category=contextFor(range),number=weekNumber(key);
-    const plan={version:paletteVersion,collage:pick('collage',category,number,previous?.collage).id,doodle:pick('doodle',category,number,previous?.doodle).id};
+    if(old?.version===paletteVersion&&['collage','doodle','support','feelings'].every(k=>valid(old[k])))return old;
+    const number=weekNumber(key),category=contextFor(weekDays(anchor));
+    const collages=library.assets.filter(a=>a.kind==='collage'&&a.enabled!==false);
+    const drawings=library.assets.filter(a=>a.kind==='doodle'&&a.enabled!==false);
+    const activities=drawings.filter(a=>a.activity);
+    const at=(pool,n)=>pool[((n%pool.length)+pool.length)%pool.length].id;
+    // Sorted calendar week is the only rotation input: revisiting and refreshing keep it stable.
+    const plan={version:paletteVersion,collage:at(collages,number+3),doodle:at(drawings,number+11),support:at(activities,number+7),feelings:at(activities,number+23)};
     state.journalDecorWeeks[key]=plan;save();return plan;
+  }
+  function assetArt(asset,className=''){
+    return JournalAssets.element(asset,className);
   }
   function vignette(anchor,place){
     const plan=planFor(anchor),box=document.createElement('div');box.className='journal-vignette';box.dataset.place=place;box.setAttribute('aria-hidden','true');
-    for(const kind of ['collage','doodle']){const a=library.assets.find(a=>a.id===plan[kind]);const img=document.createElement('img');img.className='journal-'+kind;img.src=a.src;img.alt='';img.width=kind==='collage'?172:65;img.height=kind==='collage'?150:88;img.decoding='async';box.append(img);}
+    for(const kind of ['collage','doodle'])box.append(assetArt(library.assets.find(a=>a.id===plan[kind]),'journal-'+kind));
     return box;
   }
   function support(range){
@@ -106,9 +112,7 @@ const JournalDecor=(function(){
     card.querySelector('p.empty')?.remove();
     const block=document.createElement('div');
     block.className='journal-support';
-    const drawing=document.createElement('img');
-    drawing.src=library.assets.find(a=>a.id==='resting-head').src;
-    drawing.alt='';
+    const drawing=assetArt(library.assets.find(a=>a.id===planFor(day).support),'journal-activity');
     const paragraph=document.createElement('p'),text=document.createElement('span');
     text.className='journal-marker';
     text.textContent=support(weekDays(day));
@@ -134,6 +138,7 @@ const JournalDecor=(function(){
     }
     const enabled=page==='diary'||page==='insights';
     document.body.classList.toggle('journal-on',enabled);
+    JournalAssets.decorate(page);
     if(!enabled)return;
     main.querySelectorAll('.journal-vignette').forEach(el=>el.remove());
     main.querySelectorAll(page==='insights'?'.ins':'.diary-entry,.diary-actions,.review-card,.calendar')
@@ -159,6 +164,7 @@ const JournalDecor=(function(){
       stampTitle(recap?.querySelector('h2'),first);
       feelings?.classList.add('journal-feelings');
       addCorner(feelings,'top');
+      if(feelings){feelings.querySelector('.feelings-activity')?.remove();feelings.append(assetArt(library.assets.find(a=>a.id===planFor(day).feelings),'journal-activity feelings-activity'));}
       recap?.append(vignette(day,'today'));
       decoratePlan();
       const planChat=main.querySelector('.journal-plan-chat');

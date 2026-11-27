@@ -195,3 +195,4 @@ body.journal-chat-on { background: var(--paper) var(--grain); }
   .journal-chat-on main::before { height: 260px; }
   .journal-chat-art { right: -8px; left: 53px; top: -18px; width: auto; height: 185px; background-position: center 60%; }
 }
+
