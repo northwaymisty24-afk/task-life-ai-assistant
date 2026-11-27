@@ -1,0 +1,70 @@
+/* Consistent miniature artwork dimensions, including narrow screens. */
+:root{--journal-doodle-size:55px}
+.journal-art{display:inline-block;position:relative;vertical-align:middle;flex:none;line-height:0;user-select:none;pointer-events:none}
+.journal-art>img{width:100%;height:100%;object-fit:contain;display:block}
+.journal-art .sprite-window{position:absolute;display:block;overflow:hidden}
+.journal-art .sprite-window img{display:block;pointer-events:none}
+.journal-sprite{mix-blend-mode:multiply}
+.journal-vignette .journal-doodle,.journal-support>.journal-activity,.journal-activity{width:var(--journal-doodle-size);height:var(--journal-doodle-size);max-width:none;flex:0 0 var(--journal-doodle-size);transform:none}
+.journal-vignette .journal-collage{width:168px;height:135px;max-width:70%}
+.journal-support{gap:12px;align-items:center}
+.journal-feelings{position:relative}
+.journal-feelings>h2{padding-right:72px}
+.journal-feelings .feelings-art-row{display:flex;justify-content:flex-end;align-items:flex-end;min-height:64px;margin:4px 4px 8px}
+.journal-feelings .feelings-activity{position:static}
+.journal-feelings .diary-steps{margin-top:0}
+.journal-feelings .diary-steps label{display:block}
+.journal-feelings .diary-steps textarea{display:block;width:100%}
+.journal-feelings>.corner-tape{right:-15px}
+.habit{display:grid;grid-template-columns:48px 32px minmax(0,1fr);column-gap:12px;align-items:center}
+.habit .habit-medal{width:48px;height:48px;border-radius:50%;overflow:hidden}
+.habit .habit-medal .sprite-window{width:100%!important;height:100%!important;left:0!important;top:0!important;border-radius:50%}
+.habit .habit-body{min-width:0;text-align:left}
+.experience-header{position:relative;display:flex;justify-content:center;flex-wrap:wrap;text-align:center;padding-top:0;gap:14px}
+.experience-header>div{width:100%}
+.experience-header .experience-book{display:block;width:86px;height:82px;margin:0 auto 7px;line-height:0}
+.experience-book svg{width:100%;height:100%}
+.experience-header>button{margin:0 auto 2px}
+.experience-header h1{font-size:clamp(30px,3.6vw,40px)}
+main{touch-action:pan-y pinch-zoom;position:relative}
+body{overflow-x:hidden}
+@media(max-width:580px){
+ .journal-vignette .journal-doodle,.journal-support>.journal-activity,.journal-activity{width:55px;height:55px;flex-basis:55px}
+ .journal-vignette .journal-collage{width:150px;height:119px}
+ .habit{column-gap:8px;grid-template-columns:48px 30px minmax(0,1fr)}
+ .habit-meta{font-size:12.5px}
+}
+@media(prefers-reduced-motion:reduce){main{transition:none!important}}
+.journal-vignette .journal-pet-art,.journal-support>.journal-pet-art,.journal-pet-art.journal-activity{width:76px;height:64px;flex:0 0 76px;max-width:none}
+
+/* Primary journal view switch: distinct from small content chips. */
+.diary-tabs{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;
+  width:100%;max-width:440px;margin:0 0 24px;padding:5px;
+  border:1px solid #b8aa92;border-radius:18px;background:#f4eee2;
+  box-shadow:0 2px 5px #493c2008;
+}
+.diary-tabs .diary-tab{
+  display:flex;align-items:center;justify-content:center;gap:9px;min-width:0;
+  min-height:56px;padding:12px 20px;border:2px solid transparent;border-radius:13px;
+  font:700 18px/1.4 var(--sans);letter-spacing:.06em;
+  color:#365745;background:transparent;touch-action:manipulation;
+  transition:background-color .15s,color .15s,box-shadow .15s;
+}
+.diary-tabs .diary-tab svg{width:22px;height:22px;flex:none}
+.diary-tabs .diary-tab:hover{background:#e6eee3}
+.diary-tabs .diary-tab[aria-pressed="true"]{
+  color:#fffdfa;background:#365745;border-color:#365745;
+  box-shadow:0 2px 5px #253d2726;
+}
+.diary-tabs .diary-tab[aria-pressed="true"]:hover{background:#2d493a;border-color:#2d493a}
+.diary-tabs .diary-tab:focus-visible{outline:3px solid #365745;outline-offset:3px;position:relative;z-index:1}
+.diary-tabs .diary-tab:active{box-shadow:inset 0 2px 4px #253d2726}
+@media(max-width:580px){
+  .diary-tabs{max-width:none;margin-bottom:22px}
+  .diary-tabs .diary-tab{min-height:52px;padding:11px 12px}
+}
+@media(prefers-reduced-motion:reduce){.diary-tabs .diary-tab{transition:none}}
+@media(forced-colors:active){
+  .diary-tabs .diary-tab[aria-pressed="true"]{border-color:Highlight;color:Highlight}
+}

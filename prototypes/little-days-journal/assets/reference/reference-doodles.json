@@ -1,0 +1,326 @@
+{
+  "atlas": "reference-doodles.webp",
+  "columns": 11,
+  "rows": 5,
+  "tileSize": 128,
+  "icons": [
+    {
+      "id": "reference-01",
+      "label": "嫩芽",
+      "row": 0,
+      "column": 0
+    },
+    {
+      "id": "reference-02",
+      "label": "水滴涟漪",
+      "row": 0,
+      "column": 1
+    },
+    {
+      "id": "reference-03",
+      "label": "小虫探头",
+      "row": 0,
+      "column": 2
+    },
+    {
+      "id": "reference-04",
+      "label": "飞鸟",
+      "row": 0,
+      "column": 3
+    },
+    {
+      "id": "reference-05",
+      "label": "垂柳",
+      "row": 0,
+      "column": 4
+    },
+    {
+      "id": "reference-06",
+      "label": "雨滴",
+      "row": 0,
+      "column": 5
+    },
+    {
+      "id": "reference-07",
+      "label": "编织吊饰",
+      "row": 0,
+      "column": 6
+    },
+    {
+      "id": "reference-08",
+      "label": "一穗麦子",
+      "row": 0,
+      "column": 7
+    },
+    {
+      "id": "reference-09",
+      "label": "麦草丛",
+      "row": 0,
+      "column": 8
+    },
+    {
+      "id": "reference-10",
+      "label": "微笑的太阳",
+      "row": 0,
+      "column": 9
+    },
+    {
+      "id": "reference-11",
+      "label": "蒲公英",
+      "row": 0,
+      "column": 10
+    },
+    {
+      "id": "reference-12",
+      "label": "空调",
+      "row": 1,
+      "column": 0
+    },
+    {
+      "id": "reference-13",
+      "label": "银杏叶",
+      "row": 1,
+      "column": 1
+    },
+    {
+      "id": "reference-14",
+      "label": "莲花灯",
+      "row": 1,
+      "column": 2
+    },
+    {
+      "id": "reference-15",
+      "label": "葡萄",
+      "row": 1,
+      "column": 3
+    },
+    {
+      "id": "reference-16",
+      "label": "螃蟹",
+      "row": 1,
+      "column": 4
+    },
+    {
+      "id": "reference-17",
+      "label": "枫叶",
+      "row": 1,
+      "column": 5
+    },
+    {
+      "id": "reference-18",
+      "label": "柿子",
+      "row": 1,
+      "column": 6
+    },
+    {
+      "id": "reference-19",
+      "label": "一碗热汤",
+      "row": 1,
+      "column": 7
+    },
+    {
+      "id": "reference-20",
+      "label": "雪花",
+      "row": 1,
+      "column": 8
+    },
+    {
+      "id": "reference-21",
+      "label": "小雪人",
+      "row": 1,
+      "column": 9
+    },
+    {
+      "id": "reference-22",
+      "label": "探头的小云",
+      "row": 1,
+      "column": 10
+    },
+    {
+      "id": "reference-23",
+      "label": "晾晒",
+      "row": 2,
+      "column": 0
+    },
+    {
+      "id": "reference-24",
+      "label": "扫帚",
+      "row": 2,
+      "column": 1
+    },
+    {
+      "id": "reference-25",
+      "label": "灯笼",
+      "row": 2,
+      "column": 2
+    },
+    {
+      "id": "reference-26",
+      "label": "汤圆",
+      "row": 2,
+      "column": 3
+    },
+    {
+      "id": "reference-27",
+      "label": "小龙",
+      "row": 2,
+      "column": 4
+    },
+    {
+      "id": "reference-28",
+      "label": "风吹柳枝",
+      "row": 2,
+      "column": 5
+    },
+    {
+      "id": "reference-29",
+      "label": "粽子",
+      "row": 2,
+      "column": 6
+    },
+    {
+      "id": "reference-30",
+      "label": "鹊桥",
+      "row": 2,
+      "column": 7
+    },
+    {
+      "id": "reference-31",
+      "label": "孔明灯",
+      "row": 2,
+      "column": 8
+    },
+    {
+      "id": "reference-32",
+      "label": "月亮与兔子",
+      "row": 2,
+      "column": 9
+    },
+    {
+      "id": "reference-33",
+      "label": "山与云",
+      "row": 2,
+      "column": 10
+    },
+    {
+      "id": "reference-34",
+      "label": "一碗面",
+      "row": 3,
+      "column": 0
+    },
+    {
+      "id": "reference-35",
+      "label": "小厨师",
+      "row": 3,
+      "column": 1
+    },
+    {
+      "id": "reference-36",
+      "label": "团圆饭",
+      "row": 3,
+      "column": 2
+    },
+    {
+      "id": "reference-37",
+      "label": "生日帽",
+      "row": 3,
+      "column": 3
+    },
+    {
+      "id": "reference-38",
+      "label": "并肩的朋友",
+      "row": 3,
+      "column": 4
+    },
+    {
+      "id": "reference-39",
+      "label": "捧花",
+      "row": 3,
+      "column": 5
+    },
+    {
+      "id": "reference-40",
+      "label": "长着脸的小树",
+      "row": 3,
+      "column": 6
+    },
+    {
+      "id": "reference-41",
+      "label": "修理工具",
+      "row": 3,
+      "column": 7
+    },
+    {
+      "id": "reference-42",
+      "label": "花枝",
+      "row": 3,
+      "column": 8
+    },
+    {
+      "id": "reference-43",
+      "label": "气球小人",
+      "row": 3,
+      "column": 9
+    },
+    {
+      "id": "reference-44",
+      "label": "领结小人",
+      "row": 3,
+      "column": 10
+    },
+    {
+      "id": "reference-45",
+      "label": "镰刀与锤子",
+      "row": 4,
+      "column": 0
+    },
+    {
+      "id": "reference-46",
+      "label": "戴帽子的人",
+      "row": 4,
+      "column": 1
+    },
+    {
+      "id": "reference-47",
+      "label": "黑板前的人",
+      "row": 4,
+      "column": 2
+    },
+    {
+      "id": "reference-48",
+      "label": "旗帜",
+      "row": 4,
+      "column": 3
+    },
+    {
+      "id": "reference-49",
+      "label": "南瓜灯",
+      "row": 4,
+      "column": 4
+    },
+    {
+      "id": "reference-50",
+      "label": "圣诞老人",
+      "row": 4,
+      "column": 5
+    },
+    {
+      "id": "reference-51",
+      "label": "烤鸡",
+      "row": 4,
+      "column": 6
+    },
+    {
+      "id": "reference-52",
+      "label": "地球",
+      "row": 4,
+      "column": 7
+    },
+    {
+      "id": "reference-53",
+      "label": "翻页日历",
+      "row": 4,
+      "column": 8
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "pairs": [
+    [
+      "butter",
+      "lilac"
+    ],
+    [
+      "sky",
+      "brick"
+    ],
+    [
+      "sage",
+      "apricot"
+    ],
+    [
+      "peacock",
+      "cement"
+    ],
+    [
+      "klein",
+      "custard"
+    ],
+    [
+      "rouge",
+      "mist"
+    ],
+    [
+      "olive",
+      "blush"
+    ],
+    [
+      "violet",
+      "clay"
+    ],
+    [
+      "petal",
+      "smoke"
+    ]
+  ],
+  "tapes": {
+    "butter": {
+      "label": "鹅黄",
+      "pattern": "散点",
+      "color": "#eed39a",
+      "text": "#3d3829",
+      "file": "butter.svg"
+    },
+    "lilac": {
+      "label": "雾紫",
+      "pattern": "格纹",
+      "color": "#dcccdf",
+      "text": "#3c3542",
+      "file": "lilac.svg"
+    },
+    "sky": {
+      "label": "晴空蓝",
+      "pattern": "十字小星",
+      "color": "#b9d3e8",
+      "text": "#2e4552",
+      "file": "sky.svg"
+    },
+    "brick": {
+      "label": "砖红",
+      "pattern": "小爱心",
+      "color": "#b86a61",
+      "text": "#fffdf1",
+      "file": "brick.svg"
+    },
+    "sage": {
+      "label": "鼠尾草绿",
+      "pattern": "小花",
+      "color": "#c5d0ad",
+      "text": "#37442a",
+      "file": "sage.svg"
+    },
+    "apricot": {
+      "label": "杏橙",
+      "pattern": "手绘斜纹",
+      "color": "#efbf97",
+      "text": "#4c3523",
+      "file": "apricot.svg"
+    },
+    "peacock": {
+      "label": "孔雀绿",
+      "pattern": "十字小星",
+      "color": "#427f78",
+      "text": "#fffdf1",
+      "file": "peacock.svg"
+    },
+    "cement": {
+      "label": "水泥灰",
+      "pattern": "细格",
+      "color": "#c7c5bd",
+      "text": "#3e403e",
+      "file": "cement.svg"
+    },
+    "klein": {
+      "label": "克莱因蓝",
+      "pattern": "十字小星",
+      "color": "#2b48a8",
+      "text": "#fffdf1",
+      "file": "klein.svg"
+    },
+    "custard": {
+      "label": "奶油黄",
+      "pattern": "细格",
+      "color": "#eedbb0",
+      "text": "#443927",
+      "file": "custard.svg"
+    },
+    "rouge": {
+      "label": "胭脂红",
+      "pattern": "小花",
+      "color": "#bd777f",
+      "text": "#fffdf4",
+      "file": "rouge.svg"
+    },
+    "mist": {
+      "label": "雾蓝",
+      "pattern": "散点",
+      "color": "#b9ced5",
+      "text": "#304752",
+      "file": "mist.svg"
+    },
+    "olive": {
+      "label": "橄榄绿",
+      "pattern": "短笔划",
+      "color": "#a9b481",
+      "text": "#354029",
+      "file": "olive.svg"
+    },
+    "blush": {
+      "label": "桃粉",
+      "pattern": "小爱心",
+      "color": "#e8bac3",
+      "text": "#553c44",
+      "file": "blush.svg"
+    },
+    "violet": {
+      "label": "薰衣草紫",
+      "pattern": "小花",
+      "color": "#c1add4",
+      "text": "#3d354a",
+      "file": "violet.svg"
+    },
+    "clay": {
+      "label": "陶土橙",
+      "pattern": "散点",
+      "color": "#d89771",
+      "text": "#4b2e22",
+      "file": "clay.svg"
+    },
+    "petal": {
+      "label": "浅粉",
+      "pattern": "蓝灰小花",
+      "color": "#efd7ce",
+      "text": "#3e3932",
+      "file": "petal.svg",
+      "size": "49px 27px"
+    },
+    "smoke": {
+      "label": "烟灰",
+      "pattern": "雾状斑驳",
+      "color": "#d0cdca",
+      "text": "#3e403e",
+      "file": "smoke.webp",
+      "size": "215px auto"
+    }
+  },
+  "firstWeek": "2026-11-23",
+  "firstPair": "petal"
+}
